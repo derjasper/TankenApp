@@ -7,7 +7,7 @@ Item {
     property int rad: 5 // <= 25
     property string sort: "price" // price, dist
     property string type: "diesel" // e5, e10, diesel
-    property string apikey: "***REMOVED***" // TODO iwie verstecken oder son kack
+    property string apikey: "***REMOVED***"
 
     property bool loading: json.loading
 
