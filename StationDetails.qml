@@ -3,7 +3,7 @@ import "JSON"
 
 Item {
     property string stationId: ""
-    property string apikey: "***REMOVED***" // TODO iwie verstecken oder son kack
+    property string apikey: "***REMOVED***"
 
     property bool loading: json.loading
 
