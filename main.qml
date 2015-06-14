@@ -9,7 +9,7 @@ MainView {
     objectName: "mainView"
 
     // Note! applicationName needs to match the "name" field of the click manifest
-    applicationName: "com.ubuntu.developer.derjasper.tanken"
+    applicationName: "com.ubuntu.developer.derjasper.tankenapp"
 
     automaticOrientation: true
 
