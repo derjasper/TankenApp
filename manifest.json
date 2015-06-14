@@ -1,0 +1,15 @@
+{
+    "name": "com.ubuntu.developer.derjasper.tanken",
+    "description": "Fuel prices.",
+    "architecture": "all",
+    "title": "TankenApp",
+    "hooks": {
+        "tanken": {
+            "apparmor": "tanken.apparmor",
+            "desktop": "tanken.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": "Jasper Nalbach <jasper@bluetreehouse.de>",
+    "framework": "ubuntu-sdk-15.04-qml"
+}
