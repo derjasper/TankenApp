@@ -42,7 +42,7 @@ Page {
             width:parent.width
         }
         Text {
-            text: i18n.tr("Licenced under GPL v2. Source code available at:") + "\n" + "https://github.com/derjasper/TankenApp"
+            text: i18n.tr("Licensed under GPL v2. Source code available at:") + "\n" + "https://github.com/derjasper/TankenApp"
             wrapMode:Text.WordWrap
             horizontalAlignment:Text.AlignHCenter
             width:parent.width
