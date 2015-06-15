@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import "JSON"
+import "apikey.js" as ApiKey
 
 Item {
     property double lat: 0.0
@@ -7,7 +8,7 @@ Item {
     property int rad: 5 // <= 25
     property string sort: "price" // price, dist
     property string type: "diesel" // e5, e10, diesel
-    property string apikey: "***REMOVED***"
+    property string apikey: ApiKey.apikey
 
     property bool loading: json.loading
 
