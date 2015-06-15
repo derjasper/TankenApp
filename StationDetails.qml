@@ -1,9 +1,10 @@
 import QtQuick 2.0
 import "JSON"
+import "apikey.js" as ApiKey
 
 Item {
     property string stationId: ""
-    property string apikey: "***REMOVED***"
+    property string apikey: ApiKey.apikey
 
     property bool loading: json.loading
 
