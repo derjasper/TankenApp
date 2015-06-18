@@ -20,12 +20,13 @@ Item {
         json.refresh()
     }
 
+    /*
     Component.onCompleted: refresh()
 
     onRadChanged: refresh()
     onSortChanged: refresh()
     onTypeChanged: refresh()
-
+    */
 
     JSONListModel {
         id: json

@@ -21,15 +21,14 @@ MainView {
     PageStack {
         id: pageStack
 
-        Component.onCompleted: push(main)
+        Component.onCompleted: {
+            push(main)
+
+            refreshList();
+        }
 
         StationList {
             id: stationModel
-            type: settings.type
-            sort: settings.sort
-            rad: settings.rad
-            lat: positionSrc.position.coordinate.latitude
-            lng: positionSrc.position.coordinate.longitude
         }
 
         Settings {
@@ -37,16 +36,30 @@ MainView {
             property string type: "e5"
             property string sort: "price"
             property string rad: "5"
+            property double lat: 0
+            property double lng: 0
         }
+
 
         PositionSource {
             id: positionSrc
             updateInterval: 10000
-            active: true
+            active: false
         }
 
-        // TODO location picker alternativ (qt location places)
+        function refreshList() {
+            if (settings.lat==0 && settings.lng==0) {
+                positionSrc.update();
+            }
 
+            stationModel.type= settings.type
+            stationModel.sort= settings.sort
+            stationModel.rad= settings.rad
+            stationModel.lat= (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.latitude : settings.lat
+            stationModel.lng= (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.longitude : settings.lng
+
+            stationModel.refresh();
+        }
 
         Tabs {
             id: main
@@ -68,6 +81,11 @@ MainView {
                                 iconName: "settings"
                                 text: i18n.tr("Filter")
                                 onTriggered: pageStack.push(filter)
+                            },
+                            Action {
+                                iconName: "location"
+                                text: i18n.tr("Select Location")
+                                onTriggered: pageStack.push(locationPage)
                             }
                         ]
                         contents: Column {
@@ -161,6 +179,11 @@ MainView {
                                 iconName: "settings"
                                 text: i18n.tr("Filter")
                                 onTriggered: pageStack.push(filter)
+                            },
+                            Action {
+                                iconName: "location"
+                                text: i18n.tr("Select Location")
+                                onTriggered: pageStack.push(locationPage)
                             }
                         ]
                         contents: Column {
@@ -234,94 +257,40 @@ MainView {
 
         }
 
-        Page {
+        SettingsPage {
             id: filter
-            title: i18n.tr("Filter")
             visible: false
 
+            type: settings.type
+            radius: settings.rad
+            sort: settings.sort
 
-            Column {
-                anchors.fill: parent
-                anchors.margins: units.gu(2)
+            onSettingsChanged: {
+                settings.type = type
+                settings.rad = radius
+                settings.sort = sort
 
-                spacing: units.gu(4)
+                console.log(settings.type)
 
-                OptionSelector {
-                    id: typeSelector
-                    text: i18n.tr("Fuel type")
-                    delegate: Component {
-                        OptionSelectorDelegate {
-                            text: i18n.tr(label)
-                            objectName: name
-                        }
-                    }
-                    model: ListModel {
-                        ListElement { name: "e5"; label: "e5" }
-                        ListElement { name: "e10"; label: "e10" }
-                        ListElement { name: "diesel"; label: "diesel" }
-                    }
-                    selectedIndex: decodeSelIdx(settings.type);
-                    onSelectedIndexChanged: {
-                        settings.type = model.get(selectedIndex).name
-                    }
-
-                    function decodeSelIdx(key) {
-                        if (key=="e5") return 0;
-                        if (key=="e10") return 1;
-                        if (key=="diesel") return 2;
-                        return 0;
-                    }
-                }
-
-                Column {
-                    width:parent.width
-                    Label {
-                        text: i18n.tr("Radius")
-                    }
-
-                    Slider {
-                        id: radiusSelector
-                        function formatValue(v) { return v.toFixed(0) + " km" }
-                        minimumValue: 1
-                        maximumValue: 25
-                        value: settings.rad
-                        live: false
-                        onValueChanged: {
-                            settings.rad = value
-                        }
-                        width:parent.width
-                    }
-                }
-
-                OptionSelector {
-                    id: sortSelector
-                    text: i18n.tr("sort by")
-                    delegate: Component {
-                        OptionSelectorDelegate {
-                            text: i18n.tr(label)
-                            objectName: name
-                        }
-                    }
-                    model: ListModel {
-                        ListElement { name: "price"; label: "price" }
-                        ListElement { name: "dist"; label: "distance" }
-                    }
-                    selectedIndex: decodeSelIdx(settings.sort);
-                    onSelectedIndexChanged: {
-                        settings.sort = model.get(selectedIndex).name
-                    }
-
-                    function decodeSelIdx(key) {
-                        if (key=="price") return 0;
-                        if (key=="dist") return 1;
-                        return 0;
-                    }
-                }
+                pageStack.refreshList()
             }
         }
 
         DetailsPage {
             id: details
+            visible: false
+        }
+
+        LocationPage {
+            id: locationPage
+            visible: false
+
+            onSetCoord: {
+                settings.lat = lat
+                settings.lng = lng
+
+                pageStack.refreshList()
+            }
         }
 
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-15 21:55+0200\n"
+"POT-Creation-Date: 2015-06-18 15:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,44 +17,48 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main.qml:56
-msgid "List"
-msgstr ""
-
-#: main.qml:58
-msgid "Gas Stations"
-msgstr ""
-
-#: main.qml:64 main.qml:157
-msgid "Reload"
-msgstr ""
-
-#: main.qml:69 main.qml:162 main.qml:239
+#: SettingsPage.qml:6 main.qml:82 main.qml:180
 msgid "Filter"
 msgstr ""
 
-#: main.qml:140
-msgid "no results"
-msgstr ""
-
-#: main.qml:149 main.qml:151
-msgid "Map"
-msgstr ""
-
-#: main.qml:231 AboutPage.qml:6
-msgid "About"
-msgstr ""
-
-#: main.qml:251
+#: SettingsPage.qml:28
 msgid "Fuel type"
 msgstr ""
 
-#: main.qml:279
+#: SettingsPage.qml:56
 msgid "Radius"
 msgstr ""
 
-#: main.qml:298
+#: SettingsPage.qml:75
 msgid "sort by"
+msgstr ""
+
+#: main.qml:69
+msgid "List"
+msgstr ""
+
+#: main.qml:71
+msgid "Gas Stations"
+msgstr ""
+
+#: main.qml:77 main.qml:175
+msgid "Reload"
+msgstr ""
+
+#: main.qml:87 main.qml:185 LocationPage.qml:6
+msgid "Select Location"
+msgstr ""
+
+#: main.qml:158
+msgid "no results"
+msgstr ""
+
+#: main.qml:167 main.qml:169
+msgid "Map"
+msgstr ""
+
+#: main.qml:254 AboutPage.qml:6
+msgid "About"
 msgstr ""
 
 #: AboutPage.qml:33
@@ -77,26 +81,38 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: DetailsPage.qml:46
+#: DetailsPage.qml:45
 msgid "e5"
 msgstr ""
 
-#: DetailsPage.qml:60
+#: DetailsPage.qml:59
 msgid "e10"
 msgstr ""
 
-#: DetailsPage.qml:74
+#: DetailsPage.qml:73
 msgid "diesel"
 msgstr ""
 
-#: DetailsPage.qml:81
+#: DetailsPage.qml:80
 msgid "open"
 msgstr ""
 
-#: DetailsPage.qml:81
+#: DetailsPage.qml:80
 msgid "closed"
 msgstr ""
 
-#: DetailsPage.qml:126
+#: DetailsPage.qml:125
 msgid "Navigate with HERE"
+msgstr ""
+
+#: LocationPage.qml:16
+msgid "Enter a location"
+msgstr ""
+
+#: LocationPage.qml:22
+msgid "Search"
+msgstr ""
+
+#: LocationPage.qml:32
+msgid "Current Location"
 msgstr ""

@@ -2,10 +2,13 @@
  *
  * Copyright (c) 2012 Romain Pokrzywka (KDAB) (romain@kdab.com)
  * Licensed under the MIT licence (http://opensource.org/licenses/mit-license.php)
+ *
+ * Modified and extended for TankenApp
  */
 
 import QtQuick 2.0
 import "jsonpath.js" as JSONPath
+import "debounce.js" as Debounce // TODO ?
 
 Item {
     property string source: ""
@@ -18,6 +21,8 @@ Item {
     property alias count: jsonModel.count
 
     onSourceChanged: refresh()
+
+    //property var refresh: Debounce.debounce(refreshNow,200)
 
     function refresh() {
         if (loading) return;
