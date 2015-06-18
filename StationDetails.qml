@@ -16,7 +16,7 @@ Item {
         json.refresh()
     }
 
-    Component.onCompleted: refresh()
+    //Component.onCompleted: refresh()
 
     onStationIdChanged: refresh()
 

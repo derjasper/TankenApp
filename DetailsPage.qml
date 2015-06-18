@@ -4,7 +4,6 @@ import QtLocation 5.3
 
 Page {
     title: i18n.tr("Details")
-    visible: false
 
     property string stationId: ""
 
