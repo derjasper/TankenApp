@@ -270,8 +270,6 @@ MainView {
                 settings.rad = radius
                 settings.sort = sort
 
-                console.log(settings.type)
-
                 pageStack.refreshList()
             }
         }

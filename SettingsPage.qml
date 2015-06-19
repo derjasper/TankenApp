@@ -21,7 +21,7 @@ Page {
         anchors.fill: parent
         anchors.margins: units.gu(2)
 
-        spacing: units.gu(4)
+        spacing: units.gu(2)
 
         OptionSelector {
             id: typeSelector
