@@ -9,7 +9,7 @@
             "desktop": "tanken.desktop"
         }
     },
-    "version": "0.2",
+    "version": "0.3",
     "maintainer": "Jasper Nalbach <jasper@bluetreehouse.de>",
     "framework": "ubuntu-sdk-15.04-qml"
 }
