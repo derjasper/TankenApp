@@ -52,7 +52,9 @@ Item {
         var objectArray = parseJSONString(json, query);
         for ( var key in objectArray ) {
             var jo = objectArray[key];
-            jsonModel.append( jo );
+            if (jo.place != "Irgendwo") {
+                jsonModel.append( jo );
+            }
         }
     }
 
