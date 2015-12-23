@@ -16,7 +16,7 @@ Page {
         UbuntuShape {
             anchors.horizontalCenter: parent.horizontalCenter
             image: Image {
-                source: "Tanken.png"
+                source: "TankenApp.png"
             }
             width:100
             height:100
