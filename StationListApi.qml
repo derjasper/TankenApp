@@ -8,6 +8,8 @@ Item {
     property string sort: "price" // price, dist
     property string type: "diesel" // e5, e10, diesel
 
+    property string api: ""
+
     property bool loading: false
 
     property ListModel model : ListModel { id: jsonModel }
@@ -17,7 +19,7 @@ Item {
 
         loading = true;
 
-        Api.getList("tankerkoenig",lat,lng,rad,type,sort,function(m) {
+        Api.getList(api,lat,lng,rad,type,sort,function(m) {
             model.clear();
             for ( var key in m ) {
                 model.append(m[key]);

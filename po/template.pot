@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-23 13:25+0100\n"
+"POT-Creation-Date: 2015-12-23 14:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: SettingsPage.qml:6 main.qml:82 main.qml:180
+#: SettingsPage.qml:6 main.qml:84 main.qml:187
 msgid "Filter"
 msgstr ""
 
@@ -33,31 +33,35 @@ msgstr ""
 msgid "sort by"
 msgstr ""
 
-#: main.qml:69
+#: main.qml:71
 msgid "List"
 msgstr ""
 
-#: main.qml:71
+#: main.qml:73
 msgid "Gas Stations"
 msgstr ""
 
-#: main.qml:77 main.qml:175
+#: main.qml:79 main.qml:182
 msgid "Reload"
 msgstr ""
 
-#: main.qml:87 main.qml:185 LocationPage.qml:6
+#: main.qml:89 main.qml:192 LocationPage.qml:6
 msgid "Select Location"
 msgstr ""
 
-#: main.qml:158
+#: main.qml:94 main.qml:197 ApiPage.qml:7
+msgid "Select Source"
+msgstr ""
+
+#: main.qml:165
 msgid "no results"
 msgstr ""
 
-#: main.qml:167 main.qml:169
+#: main.qml:174 main.qml:176
 msgid "Map"
 msgstr ""
 
-#: main.qml:254 AboutPage.qml:6
+#: main.qml:266 AboutPage.qml:6
 msgid "About"
 msgstr ""
 
@@ -81,27 +85,27 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: DetailsPage.qml:45
+#: DetailsPage.qml:47
 msgid "e5"
 msgstr ""
 
-#: DetailsPage.qml:59
+#: DetailsPage.qml:61
 msgid "e10"
 msgstr ""
 
-#: DetailsPage.qml:73
+#: DetailsPage.qml:75
 msgid "diesel"
 msgstr ""
 
-#: DetailsPage.qml:80
+#: DetailsPage.qml:82
 msgid "open"
 msgstr ""
 
-#: DetailsPage.qml:80
+#: DetailsPage.qml:82
 msgid "closed"
 msgstr ""
 
-#: DetailsPage.qml:125
+#: DetailsPage.qml:127
 msgid "Navigate with HERE"
 msgstr ""
 

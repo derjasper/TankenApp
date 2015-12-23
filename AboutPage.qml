@@ -30,7 +30,7 @@ Page {
             width:parent.width
         }
         Text {
-            text: i18n.tr("Germany's offical MTS-K data.") + "\n" + i18n.tr("No warranty for correct prices and availability.")
+            text: i18n.tr("real-time fuel prices") + "\n" + i18n.tr("No warranty for correct prices and availability.")
             wrapMode:Text.WordWrap
             horizontalAlignment:Text.AlignHCenter
             width:parent.width
@@ -42,7 +42,7 @@ Page {
             width:parent.width
         }
         Text {
-            text: i18n.tr("Licensed under GPL v2. Source code available at:") + "\n" + "https://github.com/derjasper/TankenApp"
+            text: i18n.tr("Licensed under GPLv3. Source code available at:") + "\n" + "https://github.com/derjasper/TankenApp"
             wrapMode:Text.WordWrap
             horizontalAlignment:Text.AlignHCenter
             width:parent.width

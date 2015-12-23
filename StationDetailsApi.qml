@@ -8,13 +8,15 @@ Item {
 
     property variant model: ({})
 
+    property string api: ""
+
     function refresh() {
         if (stationId=="")
             return;
 
         loading = true;
 
-        Api.getDetails("tankerkoenig", stationId, function(m) {
+        Api.getDetails(api, stationId, function(m) {
             model = m;
 
             loading = false;

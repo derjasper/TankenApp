@@ -29,6 +29,7 @@ MainView {
 
         StationListApi {
             id: stationModel
+            api: settings.api
         }
 
         Settings {
@@ -38,6 +39,7 @@ MainView {
             property string rad: "5"
             property double lat: 0
             property double lng: 0
+            property string api: "tankerkoenig"
         }
 
 
@@ -86,6 +88,11 @@ MainView {
                                 iconName: "location"
                                 text: i18n.tr("Select Location")
                                 onTriggered: pageStack.push(locationPage)
+                            },
+                            Action {
+                                iconName: "settings"
+                                text: i18n.tr("Select Source")
+                                onTriggered: pageStack.push(apiPage)
                             }
                         ]
                         contents: Column {
@@ -184,6 +191,11 @@ MainView {
                                 iconName: "location"
                                 text: i18n.tr("Select Location")
                                 onTriggered: pageStack.push(locationPage)
+                            },
+                            Action {
+                                iconName: "settings"
+                                text: i18n.tr("Select Source")
+                                onTriggered: pageStack.push(apiPage)
                             }
                         ]
                         contents: Column {
@@ -277,6 +289,7 @@ MainView {
         DetailsPage {
             id: details
             visible: false
+            api: settings.api
         }
 
         LocationPage {
@@ -286,6 +299,16 @@ MainView {
             onSetCoord: {
                 settings.lat = lat
                 settings.lng = lng
+
+                pageStack.refreshList()
+            }
+        }
+        ApiPage {
+            id: apiPage
+            visible: false
+
+            onSetApi: {
+                settings.api = api
 
                 pageStack.refreshList()
             }
