@@ -6,10 +6,12 @@ Page {
     title: i18n.tr("Details")
 
     property string stationId: ""
+    property string api: ""
 
     StationDetailsApi {
         id: stationDetails
         stationId: details.stationId
+        api: details.api
 
         onModelChanged: {
             if (stationId!="") details.title = (stationDetails.model.brand!="") ? stationDetails.model.brand : stationDetails.model.name
