@@ -1,30 +1,28 @@
 import QtQuick 2.0
-import "JSON"
-import "apikey.js" as ApiKey
+import "api/api.js" as Api
 
 Item {
     property string stationId: ""
-    property string apikey: ApiKey.apikey
 
-    property bool loading: json.loading
+    property bool loading: false
 
-    property variant model : json.model
+    property variant model: ({})
 
     function refresh() {
-        if (stationId!="")
-        json.source = "https://creativecommons.tankerkoenig.de/json/detail.php?id="+stationId+"&apikey="+apikey;
-        json.refresh()
-    }
+        if (stationId=="")
+            return;
 
-    //Component.onCompleted: refresh()
+        loading = true;
+
+        Api.getDetails("tankerkoenig", stationId, function(m) {
+            model = m;
+
+            loading = false;
+        });
+
+    }
 
     onStationIdChanged: refresh()
-
-    JSONModel {
-        id: json
-        source: ""
-        query: "$.station"
-    }
 }
 
 

@@ -27,7 +27,7 @@ MainView {
             refreshList();
         }
 
-        StationList {
+        StationListApi {
             id: stationModel
         }
 

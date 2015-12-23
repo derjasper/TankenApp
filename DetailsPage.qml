@@ -7,7 +7,7 @@ Page {
 
     property string stationId: ""
 
-    StationDetails {
+    StationDetailsApi {
         id: stationDetails
         stationId: details.stationId
 

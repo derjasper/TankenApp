@@ -1,6 +1,5 @@
 import QtQuick 2.0
-import "JSON"
-import "apikey.js" as ApiKey
+import "api/api.js" as Api
 
 Item {
     property double lat: 0.0
@@ -8,16 +7,24 @@ Item {
     property int rad: 5 // <= 25
     property string sort: "price" // price, dist
     property string type: "diesel" // e5, e10, diesel
-    property string apikey: ApiKey.apikey
 
-    property bool loading: json.loading
+    property bool loading: false
 
-    property ListModel model : json.model
+    property ListModel model : ListModel { id: jsonModel }
 
     function refresh() {
         if (lat==0 && lng==0) return;
-        json.source = "https://creativecommons.tankerkoenig.de/json/list.php?lat="+lat+"&lng="+lng+"&rad="+rad+"&sort="+sort+"&type="+type+"&apikey="+apikey;
-        json.refresh()
+
+        loading = true;
+
+        Api.getList("tankerkoenig",lat,lng,rad,type,sort,function(m) {
+            model.clear();
+            for ( var key in m ) {
+                model.append(m[key]);
+            }
+
+            loading = false;
+        });
     }
 
     /*
@@ -27,12 +34,6 @@ Item {
     onSortChanged: refresh()
     onTypeChanged: refresh()
     */
-
-    JSONListModel {
-        id: json
-        source: ""
-        query: "$.stations[*]"
-    }
 }
 
 
