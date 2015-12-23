@@ -1,0 +1,15 @@
+{
+    "name": "com.ubuntu.developer.derjasper.tankenapp",
+    "description": "description of TankenApp",
+    "architecture": "@CLICK_ARCH@",
+    "title": "TankenApp",
+    "hooks": {
+        "TankenApp": {
+            "apparmor": "TankenApp/TankenApp.apparmor",
+            "desktop": "TankenApp/TankenApp.desktop"
+        }
+    },
+    "version": "0.4",
+    "maintainer": "Jasper Nalbach <jasper@bluetreehouse.de>",
+    "framework": "ubuntu-sdk-15.04.3"
+}

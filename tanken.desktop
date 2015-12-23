@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=TankenApp
-Exec=qmlscene $@ main.qml
-Icon=Tanken.png
-Terminal=false
-Type=Application
-X-Ubuntu-Touch=true
-

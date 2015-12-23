@@ -1,7 +1,7 @@
-import QtQuick 2.0
+import QtQuick 2.4
 import Ubuntu.Components 1.2
 import Qt.labs.settings 1.0
-import QtPositioning 5.2
+import QtPositioning 5.4
 import QtLocation 5.3
 
 MainView {
