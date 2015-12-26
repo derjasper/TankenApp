@@ -8,7 +8,7 @@ Real time fuel prices.
 * choose or detect location
 * filter and sorting supported
 * multiple APIs
-* responsive layout
+* responsive layout (coming soon)
 
 ## Supported APIs
 
