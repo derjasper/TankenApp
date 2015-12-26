@@ -10,6 +10,8 @@ Item {
 
     property string api: ""
 
+    property var apiProps: Api.apiindex[api]
+
     property bool loading: false
 
     property ListModel model : ListModel { id: jsonModel }
@@ -28,6 +30,8 @@ Item {
             loading = false;
         });
     }
+
+    // TODO error handling
 
     /*
     Component.onCompleted: refresh()

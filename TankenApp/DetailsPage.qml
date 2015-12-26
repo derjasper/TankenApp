@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.2
 import QtLocation 5.3
+import QtQuick.Layouts 1.1
+import "helper.js" as Helper
 
 Page {
     title: i18n.tr("Details")
@@ -30,49 +32,37 @@ Page {
 
             spacing: units.gu(2)
 
-            Row {
+            GridLayout {
                 width:parent.width
+                columns: 3
 
-                Column {
-                    width:parent.width/3
-                    anchors.margins: units.gu(2)
+                Repeater {
+                    model: stationDetails.model.fuel
 
-                    Label {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: stationDetails.model.e5!= null ? stationDetails.model.e5 : "-"
-                        fontSize:"x-large"
-                    }
-                    Label {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: i18n.tr("e5")
-                    }
-                }
-                Column {
-                    width:parent.width/3
-                    anchors.margins: units.gu(2)
+                    Column {
+                        anchors.margins: units.gu(2)
 
-                    Label {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: stationDetails.model.e10!= null ? stationDetails.model.e10 : "-"
-                        fontSize:"x-large"
-                    }
-                    Label {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: i18n.tr("e10")
-                    }
-                }
-                Column {
-                    width:parent.width/3
-                    anchors.margins: units.gu(2)
+                        Row {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            Label {
+                                text: modelData.price
+                                fontSize:"x-large"
+                            }
+                            Label {
+                                text: modelData.price_currency
+                                fontSize:"x-small"
+                            }
+                        }
 
-                    Label {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: stationDetails.model.diesel!= null ? stationDetails.model.diesel : "-"
-                        fontSize:"x-large"
-                    }
-                    Label {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: i18n.tr("diesel")
+                        Label {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            text: i18n.tr(modelData.type)
+                        }
+
+                        Label {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            text: modelData.lastUpdate !="null" ? Helper.renderLastUpdate(modelData.lastUpdate) : ""
+                        }
                     }
                 }
             }
@@ -142,7 +132,7 @@ Page {
                     text: stationDetails.model.brand+""
                 }
                 Label {
-                    text: stationDetails.model.street + (stationDetails.model.houseNumber==undefined ? "" : " "+stationDetails.model.houseNumber )
+                    text: stationDetails.model.address+""
                     fontSize: "small"
                 }
                 Label {

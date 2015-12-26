@@ -13,6 +13,8 @@ Qt.include("apiindex.js")
 var apis = {};
 Qt.include("tankerkoenig/api.js");
 apis["tankerkoenig"]=tankerkoenigApi;
+Qt.include("mygasfeed/api.js");
+apis["mygasfeed"]=mygasfeedApi;
 
 /**
   get a list of stations
@@ -21,8 +23,8 @@ apis["tankerkoenig"]=tankerkoenigApi;
   apiId: api to use
   lat: lat of center
   lng: lng of center
-  rad: radius around center
-  type: fuel type; e5, e10, diesel
+  rad: radius around center; km or miles (depends on api)
+  type: fuel type; e5, e10, diesel, reg, mid, pre (depends on api)
   sort: sort by; price, dist
   callback: callback function
 
@@ -32,23 +34,23 @@ apis["tankerkoenig"]=tankerkoenigApi;
   lng: lng of station
   brand: brand
   dist: distance to center
+  dist_unit: unit of distance
   price: price of selected fuel type
-  currency: currency of price
+  price_currency: currency of price
   id: id of gas station (dependent on api)
-  street: address
-  houseNumber: address
+  address: street and house number
   postCode: address
   place: address
-  state: address
+  state: state or region
   country: address
-  lastUpdate: last update of pricing information (YYYY-MM-DD hh:mm:ss)
+  lastUpdate: last update of pricing information (Date object)
 
-  if an information is not available, the key has null as value
+  if an information is not available, the key has "null" as value; all values are strings (except exceptions)
 
   on error, the callback is called with null
 */
 function getList(apiId, lat, lng, rad, type, sort, callback) {
-    apis[apiId].getList(apikey[apiId], lat, lng, rad, type, sort, callback);
+    apis[apiId].getList(apikey[apiId].key, apikey[apiId].url, lat, lng, rad, type, sort, callback);
 }
 
 /**
@@ -63,21 +65,15 @@ function getList(apiId, lat, lng, rad, type, sort, callback) {
   id: station id
   name: name
   brand: brand
-  street: address
-  houseNumber: address
+  address: street and house number
   postCode: address
   place: address
-  state: address
+  state: state or region
   country: address
   isOpen: true if station is open now
-  price: { (object of prices; entries may be set to null if station does not sell the fuel type)
-    e5: e5
-    e10: e10
-    diesel: diesel
-  }
   lat: lat of station
   lng: lng of station
-  openingTimes: [ (array of openign times)
+  openingTimes: [ (array of opening times)
     {
         text: description of weekday or sth like that; dependent on language and api
         start: start time in hh:mm:ss
@@ -85,12 +81,20 @@ function getList(apiId, lat, lng, rad, type, sort, callback) {
     }
 
   ]
-  lastUpdate: last update of pricing information (YYYY-MM-DD hh:mm:ss)
+  fuel: [
+    {
+      type: e5,e10,diesel,...
+      price: price
+      price_currency: currency of price
+      lastUpdate: last update of pricing information (Date object)
+    }
+  ]
 
-  if an information is not available, the key has null as value
+
+  if an information is not available, the key has "null" as value; all values are strings (except exceptions)
 
   on error, the callback is called with null
 */
 function getDetails(apiId, id, callback) {
-    apis[apiId].getDetails(apikey[apiId], id, callback);
+    apis[apiId].getDetails(apikey[apiId].key, apikey[apiId].url, id, callback);
 }
