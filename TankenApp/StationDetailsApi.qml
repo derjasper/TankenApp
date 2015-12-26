@@ -10,6 +10,8 @@ Item {
 
     property string api: ""
 
+    property var apiProps: Api.apiindex[api]
+
     function refresh() {
         if (stationId=="")
             return;
@@ -25,6 +27,8 @@ Item {
     }
 
     onStationIdChanged: refresh()
+
+    // TODO error handling
 }
 
 

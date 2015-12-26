@@ -8,7 +8,7 @@ Page {
     signal setCoord(double lat,double lng)
 
     head.contents: Row {
-        width: parent.width
+        width: parent == null ? 0 : parent.width
         spacing: units.gu(2)
 
         TextField {

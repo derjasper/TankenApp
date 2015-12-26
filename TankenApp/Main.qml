@@ -3,6 +3,7 @@ import Ubuntu.Components 1.2
 import Qt.labs.settings 1.0
 import QtPositioning 5.4
 import QtLocation 5.3
+import "helper.js" as Helper;
 
 MainView {
     // objectName for functional testing purposes (autopilot-qt5)
@@ -27,7 +28,7 @@ MainView {
             refreshList();
         }
 
-        StationListApi {
+        StationListApi { // TODO api qml objects ggf vereinheitlichen
             id: stationModel
             api: settings.api
         }
@@ -101,7 +102,7 @@ MainView {
                                 fontSize:"large"
                             }
                             Label {
-                                text: i18n.tr(settings.type) + ", "+settings.rad.split(".")[0]+" km, sort by " + i18n.tr(settings.sort)
+                                text: i18n.tr(settings.type) + ", "+settings.rad.split(".")[0]+" "+stationModel.apiProps.unit.distance+", sort by " + i18n.tr(settings.sort)
                             }
                         }
                     }
@@ -125,13 +126,20 @@ MainView {
 
                             Row {
                                 Column {
-                                    Label {
-                                        text: price
-                                        fontSize:"x-large"
+                                    Row {
+                                        Label {
+                                            text: price
+                                            fontSize:"x-large"
+                                        }
+
+                                        Label {
+                                            text: price_currency
+                                            fontSize:"x-small"
+                                        }
                                     }
 
                                     Label {
-                                        text: dist + " km"
+                                        text: lastUpdate !="null" ? Helper.renderLastUpdate(lastUpdate) : dist + " " + dist_unit
                                     }
 
                                     width:units.gu(10)
@@ -139,14 +147,22 @@ MainView {
                                 }
 
                                 Column {
-                                    Label {
-                                        text: (brand!="") ? brand : name
-                                        fontSize: "large"
+                                    Row {
+                                        Label {
+                                            text: (brand!="") ? brand : name
+                                            fontSize: "large"
 
+                                        }
+
+                                        Label {
+                                            text: lastUpdate !="null" ? dist + " " + dist_unit : ""
+                                        }
+
+                                        spacing: units.gu(2)
                                     }
 
                                     Label {
-                                        text: street + (houseNumber==undefined ? "" : " "+houseNumber ) + ", " + postCode + " " + place
+                                        text: address + ", " + (typeof postCode !== 'undefined' && postCode != null ? postCode + " " : "") + place
                                         fontSize: "small"
                                     }
 
@@ -160,7 +176,7 @@ MainView {
 
                         visible : stationModel.model.count > 0
                     }
-                    Text{
+                    Text{ // TODO add loader
                          visible : stationModel.model.count == 0
                          text: i18n.tr("no results")
                          anchors.centerIn: parent

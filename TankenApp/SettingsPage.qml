@@ -32,10 +32,13 @@ Page {
                     objectName: name
                 }
             }
-            model: ListModel {
+            model: ListModel { // TODO only show supported types
                 ListElement { name: "e5"; label: "e5" }
                 ListElement { name: "e10"; label: "e10" }
                 ListElement { name: "diesel"; label: "diesel" }
+                ListElement { name: "reg"; label: "regular" }
+                ListElement { name: "mid"; label: "mid-grade" }
+                ListElement { name: "pre"; label: "premium" }
             }
             selectedIndex: decodeSelIdx(type);
             onSelectedIndexChanged: {
@@ -58,7 +61,7 @@ Page {
 
             Slider {
                 id: radiusSelector
-                function formatValue(v) { return v.toFixed(0) + " km" }
+                function formatValue(v) { return v.toFixed(0) + " km" } // TODO show current dist unit
                 minimumValue: 1
                 maximumValue: 25
                 value: radius

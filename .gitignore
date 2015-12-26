@@ -1,4 +1,5 @@
+Makefile
+*.tmp
+.bzr
 .git
-Tanken.qmlproject.user
-Tanken.qmlproject.user.*
-apikey.js
+po
