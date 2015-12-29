@@ -1,8 +1,11 @@
 import QtQuick 2.4
-import Ubuntu.Components 1.2
+import Ubuntu.Components 1.3
 import Qt.labs.settings 1.0
 import QtPositioning 5.4
-import QtLocation 5.3
+import Ubuntu.Layouts 1.0
+import Ubuntu.Components.Popups 1.3
+
+import Ubuntu.Components.ListItems 1.3 as ListItems
 import "helper.js" as Helper;
 
 MainView {
@@ -19,7 +22,31 @@ MainView {
     width: units.gu(100)
     height: units.gu(75)
 
-    PageStack {
+    StationListApi {
+        id: stationModel
+        api: settings.api
+    }
+
+    Settings {
+        id: settings
+        property string type: "e5"
+        property string sort: "price"
+        property string rad: "5"
+        property double lat: 0
+        property double lng: 0
+        property string api: "tankerkoenig"
+    }
+
+
+    PositionSource {
+        id: positionSrc
+        updateInterval: 10000
+        active: false
+    }
+
+    PageStack { // TODO redesign
+        // TODO filter + location + api auf eine seite?
+
         id: pageStack
 
         Component.onCompleted: {
@@ -28,27 +55,7 @@ MainView {
             refreshList();
         }
 
-        StationListApi { // TODO api qml objects ggf vereinheitlichen
-            id: stationModel
-            api: settings.api
-        }
 
-        Settings {
-            id: settings
-            property string type: "e5"
-            property string sort: "price"
-            property string rad: "5"
-            property double lat: 0
-            property double lng: 0
-            property string api: "tankerkoenig"
-        }
-
-
-        PositionSource {
-            id: positionSrc
-            updateInterval: 10000
-            active: false
-        }
 
         function refreshList() {
             if (settings.lat==0 && settings.lng==0) {
@@ -64,50 +71,90 @@ MainView {
             stationModel.refresh();
         }
 
-        Tabs {
+        Page {
             id: main
 
-            Tab {
-                id: list
-                title: i18n.tr("List")
-                page: Page {
-                    title: i18n.tr("Gas Stations")
+            flickable: layouts.currentLayout == "mobile" ? list : null
 
-                    head {
-                        actions: [
-                            Action {
-                                iconName: "reload"
-                                text: i18n.tr("Reload")
-                                onTriggered: stationModel.refresh()
-                            },
-                            Action {
-                                iconName: "settings"
-                                text: i18n.tr("Filter")
-                                onTriggered: pageStack.push(filter)
-                            },
-                            Action {
-                                iconName: "location"
-                                text: i18n.tr("Select Location")
-                                onTriggered: pageStack.push(locationPage)
-                            },
-                            Action {
-                                iconName: "settings"
-                                text: i18n.tr("Select Source")
-                                onTriggered: pageStack.push(apiPage)
+            title: i18n.tr("Gas Stations")
+
+            head { // TODO settings mergen
+                actions: [
+                    Action {
+                        iconName: "reload"
+                        text: i18n.tr("Reload")
+                        onTriggered: stationModel.refresh()
+                    },
+                    Action {
+                        iconName: "settings"
+                        text: i18n.tr("Filter")
+                        onTriggered: pageStack.push(filter)
+                    },
+                    Action {
+                        iconName: "location"
+                        text: i18n.tr("Select Location")
+                        onTriggered: pageStack.push(locationPage)
+                    },
+                    Action {
+                        iconName: "settings"
+                        text: i18n.tr("Select Source")
+                        onTriggered: pageStack.push(apiPage)
+                    },
+                    Action {
+                        iconName: "torch-off"
+                        text: i18n.tr("About")
+                        onTriggered: pageStack.push(aboutPage)
+                    }
+                ]
+                contents: Column {
+                    Label {
+                        text: main.title
+                        fontSize:"large"
+                    }
+                    Label {
+                        text: i18n.tr(settings.type) + ", "+settings.rad.split(".")[0]+" "+stationModel.apiProps.unit.distance+", sort by " + i18n.tr(settings.sort)
+                    }
+                }
+            }
+
+            Layouts {
+                id: layouts
+                anchors.fill: parent
+                layouts: [
+                    ConditionalLayout {
+                        name: "tablet"
+                        when: layouts.width > units.gu(60)
+                        Flow {
+                            anchors.fill: parent
+                            flow: Flow.LeftToRight
+                            ItemLayout {
+                                item: "details"
+                                width: units.gu(60)
+                                height: parent.height
                             }
-                        ]
-                        contents: Column {
-                            Label {
-                                text: main.currentPage.title
-                                fontSize:"large"
-                            }
-                            Label {
-                                text: i18n.tr(settings.type) + ", "+settings.rad.split(".")[0]+" "+stationModel.apiProps.unit.distance+", sort by " + i18n.tr(settings.sort)
+                            ItemLayout {
+                                item: "map"
+                                width: parent.width - units.gu(60)
+                                height: parent.height
                             }
                         }
-                    }
+                    },
+                    ConditionalLayout {
+                        name: "mobile"
+                        when: layouts.width <= units.gu(60)
 
-                    ListView {
+                        ItemLayout {
+                            item: "details"
+                            anchors.fill: parent
+                        }
+                    }
+                ]
+
+                Item {
+                    Layouts.item: "details"
+
+                    UbuntuListView {
+                        id: list
                         anchors.fill: parent
                         model: stationModel.model
 
@@ -118,11 +165,11 @@ MainView {
 
                         delegate: ListItem {
                             contentItem.anchors {
-                                    leftMargin: units.gu(2)
-                                    rightMargin: units.gu(2)
-                                    topMargin: units.gu(0.5)
-                                    bottomMargin: units.gu(0.5)
-                                }
+                                leftMargin: units.gu(2)
+                                rightMargin: units.gu(2)
+                                topMargin: units.gu(0.5)
+                                bottomMargin: units.gu(0.5)
+                            }
 
                             Row {
                                 Column {
@@ -142,14 +189,14 @@ MainView {
                                         text: lastUpdate !="null" ? Helper.renderLastUpdate(lastUpdate) : dist + " " + dist_unit
                                     }
 
-                                    width:units.gu(10)
+                                    width:units.gu(12)
                                     height: parent.height
                                 }
 
                                 Column {
                                     Row {
                                         Label {
-                                            text: (brand!="") ? brand : name
+                                            text: (brand!="null") ? brand : name
                                             fontSize: "large"
 
                                         }
@@ -162,7 +209,7 @@ MainView {
                                     }
 
                                     Label {
-                                        text: address + ", " + (typeof postCode !== 'undefined' && postCode != null ? postCode + " " : "") + place
+                                        text: address + ", " + (postCode != "null" ? postCode + " " : "") + place
                                         fontSize: "small"
                                     }
 
@@ -174,115 +221,54 @@ MainView {
                             }
                         }
 
-                        visible : stationModel.model.count > 0
+                        visible : stationModel.model.count > 0 || stationModel.loading
                     }
-                    Text{ // TODO add loader
-                         visible : stationModel.model.count == 0
-                         text: i18n.tr("no results")
-                         anchors.centerIn: parent
+                    Text{
+                        visible : stationModel.model.count == 0 && !stationModel.loading
+                        text: i18n.tr("no results")
+                        anchors.centerIn: parent
                     }
 
+                    BottomEdgeHint {
+                        visible: layouts.currentLayout == "mobile"
+                        id: bottomEdgeHint
+                        text: i18n.tr("Map")
+                        onClicked: pageStack.push(mapPage)
+                    }
                 }
-            }
 
-            Tab {
-                id: mapTab
-                title: i18n.tr("Map")
-                page: Page {
-                    title: i18n.tr("Map")
+                TankenMap {
+                    Layouts.item: "map"
 
-                    head {
-                        actions: [
-                            Action {
-                                iconName: "reload"
-                                text: i18n.tr("Reload")
-                                onTriggered: stationModel.refresh()
-                            },
-                            Action {
-                                iconName: "settings"
-                                text: i18n.tr("Filter")
-                                onTriggered: pageStack.push(filter)
-                            },
-                            Action {
-                                iconName: "location"
-                                text: i18n.tr("Select Location")
-                                onTriggered: pageStack.push(locationPage)
-                            },
-                            Action {
-                                iconName: "settings"
-                                text: i18n.tr("Select Source")
-                                onTriggered: pageStack.push(apiPage)
-                            }
-                        ]
-                        contents: Column {
-                            Label {
-                                text: main.currentPage.title
-                                fontSize:"large"
-                            }
-                            Label {
-                                text: i18n.tr(settings.type) + ", "+settings.rad.split(".")[0]+" km"
-                            }
-                        }
-                    }
+                    anchors.fill:parent
 
-                    Map {
-                        id: map
-                        anchors.fill: parent
+                    model: stationModel.model
+                    centerLatitude: settings.lat
+                    centerLongitude: settings.lng
 
-                        center {
-                            latitude: positionSrc.position.coordinate.latitude
-                            longitude: positionSrc.position.coordinate.longitude
-                        }
-                        zoomLevel: (maximumZoomLevel - minimumZoomLevel)/2
-                        gesture.enabled: true
-                        gesture.flickDeceleration: 3000
-
-                        plugin: Plugin {
-                            preferred:["osm"]
-                        }
-
-                        MapItemView {
-                            model: stationModel.model
-                            delegate: MapQuickItem {
-                                anchorPoint.x: 14
-                                anchorPoint.y: 50
-                                sourceItem: MouseArea {
-                                    width: 28
-                                    height: 50
-
-                                    Image {
-                                        width: 28
-                                        height: 50
-                                        source: "marker.png"
-
-                                    }
-
-                                    onClicked: {
-                                        pageStack.push(details,{stationId: id})
-                                    }
-                                }
-
-
-                                coordinate {
-                                    latitude: lat
-                                    longitude: lng
-                                }
-
-                            }
-
-                            autoFitViewport: true
-
-                        }
+                    onMarkerClicked: {
+                        pageStack.push(details,{stationId: currentId})
                     }
                 }
             }
+        }
 
-            Tab {
-                id: about
-                title: i18n.tr("About")
-                page: AboutPage {}
+        Page {
+            id: mapPage
+            visible: false
+            title: i18n.tr("Map")
+
+            TankenMap {
+                anchors.fill:parent
+
+                model: stationModel.model
+                centerLatitude: settings.lat
+                centerLongitude: settings.lng
+
+                onMarkerClicked: {
+                    pageStack.push(details,{stationId: currentId})
+                }
             }
-
         }
 
         SettingsPage {
@@ -328,6 +314,11 @@ MainView {
 
                 pageStack.refreshList()
             }
+        }
+
+        AboutPage {
+            id: aboutPage
+            visible: false
         }
 
 

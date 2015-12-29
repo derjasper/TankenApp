@@ -3,8 +3,8 @@ TARGET = TankenApp
 
 RESOURCES += TankenApp.qrc
 
-QML_FILES += $$files(*.qml,true) \
-             $$files(*.js,true)
+QML_FILES += $$files(*.js,true) \
+             $$files(*.qml,true)
 
 CONF_FILES +=  TankenApp.apparmor \
                TankenApp.png
@@ -37,4 +37,5 @@ INSTALLS+=config_files qml_files desktop_file
 QT += location
 
 DISTFILES += \
-    helper.js
+    helper.js api/* \
+    TankenMap.qml

@@ -5,6 +5,7 @@ Item {
     property string stationId: ""
 
     property bool loading: false
+    property bool err: false
 
     property variant model: ({})
 
@@ -19,7 +20,14 @@ Item {
         loading = true;
 
         Api.getDetails(api, stationId, function(m) {
-            model = m;
+            if (m == null) {
+                model = {};
+                err = true;
+            }
+            else {
+                model = m;
+                err = false;
+            }
 
             loading = false;
         });
@@ -27,8 +35,6 @@ Item {
     }
 
     onStationIdChanged: refresh()
-
-    // TODO error handling
 }
 
 

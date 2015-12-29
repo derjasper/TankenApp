@@ -13,6 +13,7 @@ Item {
     property var apiProps: Api.apiindex[api]
 
     property bool loading: false
+    property bool err: false
 
     property ListModel model : ListModel { id: jsonModel }
 
@@ -22,24 +23,23 @@ Item {
         loading = true;
 
         Api.getList(api,lat,lng,rad,type,sort,function(m) {
+
             model.clear();
-            for ( var key in m ) {
-                model.append(m[key]);
+
+            if (m == null) {
+                err = true;
+            }
+            else {
+                for ( var key in m ) {
+                    model.append(m[key]);
+                }
+
+                err = false;
             }
 
             loading = false;
         });
     }
-
-    // TODO error handling
-
-    /*
-    Component.onCompleted: refresh()
-
-    onRadChanged: refresh()
-    onSortChanged: refresh()
-    onTypeChanged: refresh()
-    */
 }
 
 
