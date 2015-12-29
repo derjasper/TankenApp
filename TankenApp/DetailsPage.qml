@@ -1,5 +1,6 @@
 import QtQuick 2.0
-import Ubuntu.Components 1.2
+import Ubuntu.Components 1.3
+ import Ubuntu.Layouts 1.0
 import QtLocation 5.3
 import QtQuick.Layouts 1.1
 import "helper.js" as Helper
@@ -16,132 +17,241 @@ Page {
         api: details.api
 
         onModelChanged: {
-            if (stationId!="") details.title = (stationDetails.model.brand!="") ? stationDetails.model.brand : stationDetails.model.name
+            if (stationId!="" && !stationDetails.err)
+                details.title = (stationDetails.model.brand!="null") ? stationDetails.model.brand : stationDetails.model.name
+
+            if (stationDetails.err)
+                details.title = i18n.tr("Details")
         }
     }
 
-    Flickable {
-        id: content
+    onStationIdChanged: {
+        details.title = i18n.tr("Details")
+    }
+
+    Layouts {
+        id: layouts
         anchors.fill: parent
-        contentHeight: col.height
+        layouts: [
+            ConditionalLayout {
+                name: "tablet"
+                when: layouts.width > units.gu(60)
+                Flow {
+                    anchors.fill: parent
+                    flow: Flow.LeftToRight
+                    ItemLayout {
+                        item: "details"
+                        width: units.gu(60)
+                        height: parent.height
+                    }
+                    ItemLayout {
+                        item: "map"
+                        width: parent.width - units.gu(60)
+                        height: parent.height
+                    }
+                }
+            },
+            ConditionalLayout {
+                name: "mobile"
+                when: layouts.width <= units.gu(60)
 
-        Column {
-            id: col
-            width: parent.width - units.gu(2)
-            anchors.horizontalCenter: parent.horizontalCenter
+                ItemLayout {
+                    item: "details"
+                    anchors.fill: parent
+                }
+            }
+        ]
+        Item {
+            Layouts.item: "details"
 
-            spacing: units.gu(2)
+            Label {
+                text: i18n.tr("An error occurred.")
+                anchors.centerIn: parent
+                visible: stationDetails.err
+            }
 
-            GridLayout {
-                width:parent.width
-                columns: 3
+            ActivityIndicator {
+                running: stationDetails.loading
+                anchors.centerIn: parent
+            }
 
-                Repeater {
-                    model: stationDetails.model.fuel
+            Flickable {
+                visible: !stationDetails.loading && !stationDetails.err
+
+                id: content
+                anchors.fill: parent
+                contentHeight: col.height + units.gu(2)*2
+
+
+                Column {
+                    id: col
+                    anchors {
+                        top: parent.top
+                        left: parent.left
+                        right: parent.right
+                        margins: units.gu(1)
+                    }
+
+                    spacing: units.gu(2)
+
+                    Flow {
+                        width:parent.width
+                        anchors.margins: 10
+                        spacing: 40
+
+                        Repeater {
+                            model: stationDetails.model.fuel
+
+                            Column {
+                                Row {
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    Label {
+                                        text: modelData.price
+                                        fontSize:"x-large"
+                                    }
+                                    Label {
+                                        text: modelData.price_currency
+                                        fontSize:"x-small"
+                                    }
+                                }
+
+                                Label {
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    text: i18n.tr(modelData.type)
+                                }
+
+                                Label {
+                                    anchors.horizontalCenter: parent.horizontalCenter
+                                    text: modelData.lastUpdate !="null" ? Helper.renderLastUpdate(modelData.lastUpdate) : ""
+                                }
+                            }
+                        }
+                    }
 
                     Column {
-                        anchors.margins: units.gu(2)
-
-                        Row {
-                            anchors.horizontalCenter: parent.horizontalCenter
+                        Label {
+                            visible: stationDetails.model.isOpen != "null"
+                            text: (stationDetails.model.isOpen ? i18n.tr("open") : i18n.tr("closed"))
+                        }
+                        Repeater {
+                            visible: stationDetails.model.openingTimes != "null"
+                            model: stationDetails.model.openingTimes
                             Label {
-                                text: modelData.price
-                                fontSize:"x-large"
-                            }
-                            Label {
-                                text: modelData.price_currency
-                                fontSize:"x-small"
+                                text: modelData.text+": "+modelData.start+" - "+modelData.end
                             }
                         }
+                    }
 
-                        Label {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            text: i18n.tr(modelData.type)
+                    Map {
+                        visible: layouts.currentLayout === "mobile"
+
+                        width: parent.width
+                        height:units.gu(30)
+
+                        center {
+                            latitude: stationDetails.model.lat != undefined ? stationDetails.model.lat : 0.0
+                            longitude: stationDetails.model.lng != undefined ? stationDetails.model.lng : 0.0
+                        }
+                        maximumZoomLevel: zoomLevel
+                        minimumZoomLevel: zoomLevel
+                        zoomLevel: 18
+
+                        gesture.enabled: false
+
+
+                        plugin: Plugin {
+                            preferred:["osm"]
                         }
 
-                        Label {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            text: modelData.lastUpdate !="null" ? Helper.renderLastUpdate(modelData.lastUpdate) : ""
+                        MapQuickItem {
+                            anchorPoint.x: 14
+                            anchorPoint.y: 50
+                            sourceItem: Image {
+                                width: 28
+                                height: 50
+                                source: "marker.png"
+                            }
+
+                            coordinate {
+                                latitude: stationDetails.model.lat != undefined ? stationDetails.model.lat : 0.0
+                                longitude: stationDetails.model.lng != undefined ? stationDetails.model.lng : 0.0
+                            }
+
                         }
                     }
-                }
-            }
 
-            Column {
-                Label {
-                    text: (stationDetails.model.isOpen ? i18n.tr("open") : i18n.tr("closed"))
-                }
-                Repeater {
-                    model: stationDetails.model.openingTimes
-                    Label {
-                        text: modelData.text+": "+modelData.start+" - "+modelData.end
+                    Column {
+                        Label {
+                            visible: stationDetails.model.name !="null"
+                            text: stationDetails.model.name+""
+                            fontSize: "large"
+                        }
+                        Label {
+                            visible: stationDetails.model.brand !="null"
+                            text: stationDetails.model.brand+""
+                        }
+                        Label {
+                            visible: stationDetails.model.address !="null"
+                            text: stationDetails.model.address+""
+                            fontSize: "small"
+                        }
+                        Label {
+                            visible: stationDetails.model.postCode != "null" || stationDetails.model.place != "null"
+                            text: (stationDetails.model.postCode != "null" ? stationDetails.model.postCode : "") + " " + (stationDetails.model.place != "null" ? stationDetails.model.place : "")
+                            fontSize: "small"
+                        }
                     }
+
+                    Button {
+                        anchors.right: parent.right
+
+                        text: i18n.tr("Navigate with HERE")
+                        color: UbuntuColors.warmGrey
+                        onClicked: {
+                            Qt.openUrlExternally("https://www.here.com/directions/drive//:"+stationDetails.model.lat+","+stationDetails.model.lng+"?map="+stationDetails.model.lat+","+stationDetails.model.lng+",14,traffic");
+                        }
+                    }
+
                 }
+
+            }
+        }
+
+
+
+        Map {
+            Layouts.item: "map"
+
+            anchors.fill: parent
+
+            center {
+                latitude: stationDetails.model.lat != undefined ? stationDetails.model.lat : 0.0
+                longitude: stationDetails.model.lng != undefined ? stationDetails.model.lng : 0.0
             }
 
-            Map {
-                width: parent.width
-                height:units.gu(30)
+            zoomLevel: (maximumZoomLevel - minimumZoomLevel) / 1.1
 
-                center {
+            plugin: Plugin {
+                preferred:["osm"]
+            }
+
+            MapQuickItem {
+                anchorPoint.x: 14
+                anchorPoint.y: 50
+                sourceItem: Image {
+                    width: 28
+                    height: 50
+                    source: "marker.png"
+                }
+
+                coordinate {
                     latitude: stationDetails.model.lat != undefined ? stationDetails.model.lat : 0.0
                     longitude: stationDetails.model.lng != undefined ? stationDetails.model.lng : 0.0
                 }
-                zoomLevel: (maximumZoomLevel - minimumZoomLevel)/2
 
-                gesture.enabled: false
-
-                plugin: Plugin {
-                    preferred:["osm"]
-                }
-
-                MapQuickItem {
-                    anchorPoint.x: 14
-                    anchorPoint.y: 50
-                    sourceItem: Image {
-                        width: 28
-                        height: 50
-                        source: "marker.png"
-                    }
-
-                    coordinate {
-                        latitude: stationDetails.model.lat != undefined ? stationDetails.model.lat : 0.0
-                        longitude: stationDetails.model.lng != undefined ? stationDetails.model.lng : 0.0
-                    }
-
-                }
             }
-
-            Row {
-                Button {
-                    text: i18n.tr("Navigate with HERE")
-                    color: UbuntuColors.orange
-                    onClicked: {
-                        Qt.openUrlExternally("https://www.here.com/directions/drive//:"+stationDetails.model.lat+","+stationDetails.model.lng+"?map="+stationDetails.model.lat+","+stationDetails.model.lng+",14,traffic");
-                    }
-                }
-            }
-
-
-            Column {
-                Label {
-                    text: stationDetails.model.name+""
-                    fontSize: "large"
-                }
-                Label {
-                    text: stationDetails.model.brand+""
-                }
-                Label {
-                    text: stationDetails.model.address+""
-                    fontSize: "small"
-                }
-                Label {
-                    text: stationDetails.model.postCode + " " + stationDetails.model.place
-                    fontSize: "small"
-                }
-            }
-
         }
-
     }
+
+
 }

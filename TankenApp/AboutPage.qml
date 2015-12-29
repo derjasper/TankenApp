@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import Ubuntu.Components 1.2
+import Ubuntu.Components 1.3
 
 
 Page {
@@ -15,7 +15,7 @@ Page {
 
         UbuntuShape {
             anchors.horizontalCenter: parent.horizontalCenter
-            image: Image {
+            source: Image {
                 source: "TankenApp.png"
             }
             width:100
