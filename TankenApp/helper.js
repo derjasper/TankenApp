@@ -1,7 +1,7 @@
 .pragma library
 
 function renderLastUpdate(date) {
-    var diff = ( (new Date()).getTime() - date.getTime() ) / 1000 / 60 / 60;
+    var diff = ( (new Date()).getTime() - (new Date(date)).getTime() ) / 1000 / 60 / 60;
 
     if (diff < 1)
         return "recent";

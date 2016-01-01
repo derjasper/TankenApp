@@ -36,7 +36,8 @@ tankerkoenigApi.getList = function(apikey, url, lat, lng, rad, type, sort, callb
                     place: data[key].place,
                     state: "null",
                     country: "Deutschland",
-                    lastUpdate: "null"
+                    lastUpdate: "null",
+                    isOpen: "null"
                 });
             }
         }
@@ -73,7 +74,7 @@ tankerkoenigApi.getDetails = function(apikey, url, id, callback) {
             place: data.place,
             state: processState(data.state),
             country: "Deutschland",
-            isOpen: data.isOpen,
+            isOpen: data.isOpen+"",
             lat: data.lat,
             lng: data.lng,
             openingTimes: data.openingTimes,

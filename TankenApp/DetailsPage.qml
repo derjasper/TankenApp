@@ -35,7 +35,7 @@ Page {
         layouts: [
             ConditionalLayout {
                 name: "tablet"
-                when: layouts.width > units.gu(60)
+                when: layouts.width > units.gu(100)
                 Flow {
                     anchors.fill: parent
                     flow: Flow.LeftToRight
@@ -53,7 +53,7 @@ Page {
             },
             ConditionalLayout {
                 name: "mobile"
-                when: layouts.width <= units.gu(60)
+                when: layouts.width <= units.gu(100)
 
                 ItemLayout {
                     item: "details"
@@ -82,6 +82,8 @@ Page {
                 anchors.fill: parent
                 contentHeight: col.height + units.gu(2)*2
 
+                clip: true
+
 
                 Column {
                     id: col
@@ -106,7 +108,7 @@ Page {
                                 Row {
                                     anchors.horizontalCenter: parent.horizontalCenter
                                     Label {
-                                        text: modelData.price
+                                        text: modelData.price != "null" ? modelData.price : "N/A"
                                         fontSize:"x-large"
                                     }
                                     Label {
@@ -131,7 +133,7 @@ Page {
                     Column {
                         Label {
                             visible: stationDetails.model.isOpen != "null"
-                            text: (stationDetails.model.isOpen ? i18n.tr("open") : i18n.tr("closed"))
+                            text: (stationDetails.model.isOpen == "true" ? i18n.tr("open") : i18n.tr("closed"))
                         }
                         Repeater {
                             visible: stationDetails.model.openingTimes != "null"

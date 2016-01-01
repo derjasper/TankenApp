@@ -7,18 +7,32 @@ var apiindex = {
             distance: "km"
         },
         features: {
-            types: ["e5", "e10", "diesel"]
+            types: ["e5", "e10", "diesel"],
+            sort: ["price","dist"]
         }
     },
     mygasfeed: {
         name: "myGasFeed.com",
         description: "user contributed data for USA",
-        license: "free - http://www.mygasfeed.com/",
+        license: "http://www.mygasfeed.com/",
         unit: {
             distance: "miles"
         },
         features: {
-            types: ["reg", "mid", "pre", "diesel"]
+            types: ["reg", "mid", "pre", "diesel"],
+            sort: ["price","dist"]
+        }
+    },
+    spritpreisrechner: {
+        name: "spritpreisrechner.at",
+        description: "official data for Austria",
+        license: "http://spritpreisrechner.at/",
+        unit: {
+            distance: "km"
+        },
+        features: {
+            types: ["diesel", "super95"],
+            sort: ["price"]
         }
     }
 };

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-29 09:55+0100\n"
+"POT-Creation-Date: 2016-01-01 14:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:6
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:105
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:103
 msgid "About"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:33
-msgid "real-time fuel prices"
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:38
+msgid "Real-time fuel prices"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:33
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:38
 msgid "No warranty for correct prices and availability."
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:39
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:45
+msgid ""
+"For bug reports, pull requests and information on how to translate, please "
+"go to the GitHub project."
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:51
+msgid "TankenApp on GitHub"
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:60
 msgid "Using TankerKoenig.de's API. Thank you for believing in open data!"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:45
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:66
+msgid "Using myGasFeed.com's API. Thank you for believing in open data!"
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:72
+msgid "Using data from spritpreisrechner.at"
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:78
 msgid "Licensed under GPLv3. Source code available at:"
 msgstr ""
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/ApiPage.qml:7
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:100
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:98
 msgid "Select Source"
 msgstr ""
 
@@ -53,20 +71,22 @@ msgstr ""
 msgid "An error occurred."
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/DetailsPage.qml:134
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/DetailsPage.qml:136
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:204
 msgid "open"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/DetailsPage.qml:134
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/DetailsPage.qml:136
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:204
 msgid "closed"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/DetailsPage.qml:208
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/DetailsPage.qml:210
 msgid "Navigate with HERE"
 msgstr ""
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/LocationPage.qml:6
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:95
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:93
 msgid "Select Location"
 msgstr ""
 
@@ -82,37 +102,37 @@ msgstr ""
 msgid "Current Location"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:79
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:77
 msgid "Gas Stations"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:85
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:83
 msgid "Reload"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:90
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:6
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:88
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:7
 msgid "Filter"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:228
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:227
 msgid "no results"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:235
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:259
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:234
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:258
 msgid "Map"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:28
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:29
 msgid "Fuel type"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:59
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:65
 msgid "Radius"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:78
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:86
 msgid "sort by"
 msgstr ""
 
