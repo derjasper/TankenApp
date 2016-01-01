@@ -37,5 +37,4 @@ INSTALLS+=config_files qml_files desktop_file
 QT += location
 
 DISTFILES += \
-    helper.js api/* \
-    TankenMap.qml
+    helper.js api/*

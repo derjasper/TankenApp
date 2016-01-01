@@ -16,7 +16,6 @@ Page {
         model: jsonModel
 
 
-
         delegate: ListItem {
             contentItem.anchors.margins: units.gu(2)
             height: units.gu(11)
@@ -62,6 +61,4 @@ Page {
             jsonModel.append(Api.apiindex[key]);
         }
     }
-
-
 }

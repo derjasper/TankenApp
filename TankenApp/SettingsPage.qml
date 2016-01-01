@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.3
+import "api/api.js" as Api
 
 Page {
     id: filter
@@ -11,45 +12,50 @@ Page {
     property string sort: "price"
     property int radius: 5
 
+    property string api
+
     onActiveChanged: {
         if (!active)
             settingsChanged()
     }
 
-
     Column {
         anchors.fill: parent
         anchors.margins: units.gu(2)
-
         spacing: units.gu(2)
 
         OptionSelector {
             id: typeSelector
             text: i18n.tr("Fuel type")
-            delegate: Component {
-                OptionSelectorDelegate {
-                    text: i18n.tr(label)
-                    objectName: name
-                }
-            }
-            model: ListModel { // TODO only show supported types
-                ListElement { name: "e5"; label: "e5" }
-                ListElement { name: "e10"; label: "e10" }
-                ListElement { name: "diesel"; label: "diesel" }
-                ListElement { name: "reg"; label: "regular" }
-                ListElement { name: "mid"; label: "mid-grade" }
-                ListElement { name: "pre"; label: "premium" }
-            }
-            selectedIndex: decodeSelIdx(type);
+            model: makeModel(Api.apiindex[api].features.types)
+            selectedIndex: keyToIndex(type);
             onSelectedIndexChanged: {
-                type = model.get(selectedIndex).name
+                type = indexToKey(selectedIndex)
             }
 
-            function decodeSelIdx(key) {
-                if (key=="e5") return 0;
-                if (key=="e10") return 1;
-                if (key=="diesel") return 2;
+            function keyToIndex(key) {
+                for (var i=0; i<model.length; i++) {
+                    if (model[i].name==key)
+                        return i;
+                }
+
                 return 0;
+            }
+
+            function indexToKey(idx) {
+                if (model.length<=idx)
+                    return 0;
+                return model[idx];
+            }
+
+            function makeModel(list) {
+                var model = [];
+
+                for (var i=0; i<list.length; i++) {
+                    model.push(i18n.tr(list[i]));
+                }
+
+                return model;
             }
         }
 
@@ -61,7 +67,9 @@ Page {
 
             Slider {
                 id: radiusSelector
-                function formatValue(v) { return v.toFixed(0) + " km" } // TODO show current dist unit
+                function formatValue(v) {
+                    return v.toFixed(0) + " " +  Api.apiindex[api].unit.distance
+                }
                 minimumValue: 1
                 maximumValue: 25
                 value: radius
@@ -76,25 +84,35 @@ Page {
         OptionSelector {
             id: sortSelector
             text: i18n.tr("sort by")
-            delegate: Component {
-                OptionSelectorDelegate {
-                    text: i18n.tr(label)
-                    objectName: name
-                }
-            }
-            model: ListModel {
-                ListElement { name: "price"; label: "price" }
-                ListElement { name: "dist"; label: "distance" }
-            }
-            selectedIndex: decodeSelIdx(sort);
+            model: makeModel(Api.apiindex[api].features.sort)
+            selectedIndex: keyToIndex(type);
             onSelectedIndexChanged: {
-                sort = model.get(selectedIndex).name
+                sort = indexToKey(selectedIndex)
             }
 
-            function decodeSelIdx(key) {
-                if (key=="price") return 0;
-                if (key=="dist") return 1;
+            function keyToIndex(key) {
+                for (var i=0; i<model.length; i++) {
+                    if (model[i].name==key)
+                        return i;
+                }
+
                 return 0;
+            }
+
+            function indexToKey(idx) {
+                if (model.length<=idx)
+                    return 0;
+                return model[idx];
+            }
+
+            function makeModel(list) {
+                var model = [];
+
+                for (var i=0; i<list.length; i++) {
+                    model.push(i18n.tr(list[i]));
+                }
+
+                return model;
             }
         }
     }

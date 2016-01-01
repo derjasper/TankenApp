@@ -44,9 +44,7 @@ MainView {
         active: false
     }
 
-    PageStack { // TODO redesign
-        // TODO filter + location + api auf eine seite?
-
+    PageStack {
         id: pageStack
 
         Component.onCompleted: {
@@ -78,7 +76,7 @@ MainView {
 
             title: i18n.tr("Gas Stations")
 
-            head { // TODO settings mergen
+            head {
                 actions: [
                     Action {
                         iconName: "reload"
@@ -101,7 +99,7 @@ MainView {
                         onTriggered: pageStack.push(apiPage)
                     },
                     Action {
-                        iconName: "torch-off"
+                        iconName: "info"
                         text: i18n.tr("About")
                         onTriggered: pageStack.push(aboutPage)
                     }
@@ -123,7 +121,7 @@ MainView {
                 layouts: [
                     ConditionalLayout {
                         name: "tablet"
-                        when: layouts.width > units.gu(60)
+                        when: layouts.width > units.gu(100)
                         Flow {
                             anchors.fill: parent
                             flow: Flow.LeftToRight
@@ -141,7 +139,7 @@ MainView {
                     },
                     ConditionalLayout {
                         name: "mobile"
-                        when: layouts.width <= units.gu(60)
+                        when: layouts.width <= units.gu(100)
 
                         ItemLayout {
                             item: "details"
@@ -153,12 +151,14 @@ MainView {
                 Item {
                     Layouts.item: "details"
 
-                    UbuntuListView {
+                    UbuntuListView { // TODO tablet mode bug
                         id: list
                         anchors.fill: parent
                         model: stationModel.model
+                        clip: layouts.currentLayout !="mobile"
 
-                        PullToRefresh {
+                        pullToRefresh {
+                            enabled: true
                             refreshing: stationModel.loading
                             onRefresh: stationModel.refresh()
                         }
@@ -175,7 +175,7 @@ MainView {
                                 Column {
                                     Row {
                                         Label {
-                                            text: price
+                                            text: price != "null" ? price : "N/A"
                                             fontSize:"x-large"
                                         }
 
@@ -198,11 +198,10 @@ MainView {
                                         Label {
                                             text: (brand!="null") ? brand : name
                                             fontSize: "large"
-
                                         }
 
                                         Label {
-                                            text: lastUpdate !="null" ? dist + " " + dist_unit : ""
+                                            text: (lastUpdate !="null" ? dist + " " + dist_unit : "") + " " + (isOpen != "null" ? (isOpen == "true" ? i18n.tr("open") : i18n.tr("closed")):"")
                                         }
 
                                         spacing: units.gu(2)
@@ -278,6 +277,8 @@ MainView {
             type: settings.type
             radius: settings.rad
             sort: settings.sort
+
+            api: settings.api
 
             onSettingsChanged: {
                 settings.type = type

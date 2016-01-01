@@ -1,3 +1,5 @@
+.pragma library
+
 Qt.include("apikeys.js")
 Qt.include("apiindex.js")
 
@@ -15,6 +17,9 @@ Qt.include("tankerkoenig/api.js");
 apis["tankerkoenig"]=tankerkoenigApi;
 Qt.include("mygasfeed/api.js");
 apis["mygasfeed"]=mygasfeedApi;
+Qt.include("spritpreisrechner/api.js");
+apis["spritpreisrechner"]=spritpreisrechnerApi;
+
 
 /**
   get a list of stations
@@ -43,7 +48,8 @@ apis["mygasfeed"]=mygasfeedApi;
   place: address
   state: state or region
   country: address
-  lastUpdate: last update of pricing information (Date object)
+  lastUpdate: last update of pricing information; string that can be parsed with "new Date(dateString)"
+  isOpen: true if station is open now
 
   if an information is not available, the key has "null" as value; all values are strings (except exceptions)
 
@@ -86,7 +92,7 @@ function getList(apiId, lat, lng, rad, type, sort, callback) {
       type: e5,e10,diesel,...
       price: price
       price_currency: currency of price
-      lastUpdate: last update of pricing information (Date object)
+      lastUpdate: last update of pricing information; string that can be parsed with "new Date(dateString)"
     }
   ]
 

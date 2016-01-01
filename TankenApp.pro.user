@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.5.0, 2015-12-29T09:56:05. -->
+<!-- Written by QtCreator 3.5.0, 2015-12-31T19:05:20. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -448,8 +448,8 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">UbuntuProjectManager.UploadStep</value>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedFiles">
        <value type="QString">/home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/build-TankenApp-UbuntuSDK_for_i386_GCC_ubuntu_sdk_15_04_vivid-Release/com.ubuntu.developer.derjasper.tankenapp_0.4_i386.click</value>
-       <value type="QString">/home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/build-TankenApp-UbuntuSDK_for_i386_GCC_ubuntu_sdk_15_04_vivid-Debug/com.ubuntu.developer.derjasper.tankenapp_0.4_i386.click</value>
        <value type="QString">/usr/ubuntu-sdk-ide/share/qtcreator/ubuntu/scripts/qtc_device_applaunch.py</value>
+       <value type="QString">/home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/build-TankenApp-UbuntuSDK_for_i386_GCC_ubuntu_sdk_15_04_vivid-Debug/com.ubuntu.developer.derjasper.tankenapp_0.4_i386.click</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedHosts">
        <value type="QString">127.0.0.1</value>
@@ -468,8 +468,8 @@
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
        <value type="QDateTime">2015-12-26T16:56:22</value>
-       <value type="QDateTime">2015-12-26T16:53:31</value>
        <value type="QDateTime">2015-12-26T16:56:22</value>
+       <value type="QDateTime">2015-12-26T16:53:31</value>
       </valuelist>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>

@@ -1,6 +1,6 @@
 var apikey = {
     tankerkoenig: {
-        key: "00000000-0000-0000-0000-000000000001",
+        key: "00000000-0000-0000-0000-000000000002",
         url: "https://creativecommons.tankerkoenig.de/"
     },
     /*
@@ -11,5 +11,9 @@ var apikey = {
     mygasfeed: {
         key: "zwi81eho81",
         url: "http://api.mygasfeed.com/"
+    },
+    spritpreisrechner: {
+        key: "",
+        url: "http://www.spritpreisrechner.at/espritmap-app/GasStationServlet"
     }
 };
