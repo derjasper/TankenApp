@@ -110,7 +110,7 @@ MainView {
                         fontSize:"large"
                     }
                     Label {
-                        text: i18n.tr(settings.type) + ", "+settings.rad.split(".")[0]+" "+stationModel.apiProps.unit.distance+", sort by " + i18n.tr(settings.sort)
+                        text: Helper.fuelKeyToString(settings.type) + ", "+settings.rad.split(".")[0]+" "+stationModel.apiProps.unit.distance+", "+i18n.tr("sort by %1").arg(Helper.sortKeyToString(settings.sort))
                     }
                 }
             }

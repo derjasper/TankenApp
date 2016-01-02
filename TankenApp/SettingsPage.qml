@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.3
 import "api/api.js" as Api
+import "helper.js" as Helper
 
 Page {
     id: filter
@@ -34,8 +35,8 @@ Page {
             }
 
             function keyToIndex(key) {
-                for (var i=0; i<model.length; i++) {
-                    if (model[i].name==key)
+                for (var i=0; i<Api.apiindex[api].features.types.length; i++) {
+                    if (Api.apiindex[api].features.types[i]==key)
                         return i;
                 }
 
@@ -43,16 +44,16 @@ Page {
             }
 
             function indexToKey(idx) {
-                if (model.length<=idx)
+                if (Api.apiindex[api].features.types.length<=idx)
                     return 0;
-                return model[idx];
+                return Api.apiindex[api].features.types[idx];
             }
 
             function makeModel(list) {
                 var model = [];
 
                 for (var i=0; i<list.length; i++) {
-                    model.push(i18n.tr(list[i]));
+                    model.push(Helper.fuelKeyToString(list[i]));
                 }
 
                 return model;
@@ -91,8 +92,8 @@ Page {
             }
 
             function keyToIndex(key) {
-                for (var i=0; i<model.length; i++) {
-                    if (model[i].name==key)
+                for (var i=0; i<Api.apiindex[api].features.sort.length; i++) {
+                    if (Api.apiindex[api].features.sort[i]==key)
                         return i;
                 }
 
@@ -100,16 +101,16 @@ Page {
             }
 
             function indexToKey(idx) {
-                if (model.length<=idx)
+                if (Api.apiindex[api].features.sort.length<=idx)
                     return 0;
-                return model[idx];
+                return Api.apiindex[api].features.sort[idx];
             }
 
             function makeModel(list) {
                 var model = [];
 
                 for (var i=0; i<list.length; i++) {
-                    model.push(i18n.tr(list[i]));
+                    model.push(Helper.sortKeyToString(list[i]));
                 }
 
                 return model;

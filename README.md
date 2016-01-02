@@ -9,7 +9,6 @@ Real time fuel prices.
 * filter and sorting supported
 * multiple APIs
 * responsive layout (beta)
-* multiple apis (beta)
 
 ## Supported APIs
 
@@ -18,3 +17,7 @@ Real time fuel prices.
 * Spritpreisrechner.at (official data for Austria - http://spritpreisrechner.at/)
 
 Please help adding more APIs!
+
+## Translations
+
+Please submit translations at https://www.transifex.com/derjasper/tankenapp/.
