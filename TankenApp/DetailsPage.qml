@@ -119,7 +119,7 @@ Page {
 
                                 Label {
                                     anchors.horizontalCenter: parent.horizontalCenter
-                                    text: i18n.tr(modelData.type)
+                                    text: Helper.fuelKeyToString(modelData.type)
                                 }
 
                                 Label {

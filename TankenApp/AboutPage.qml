@@ -5,8 +5,6 @@ import Ubuntu.Components 1.3
 Page {
     title: i18n.tr("About")
 
-    // TODO donate
-
     Flickable {
         anchors.fill: parent
         contentHeight: column.height + column.anchors.topMargin + column.anchors.bottomMargin
@@ -57,6 +55,23 @@ Page {
             }
 
             Text {
+                text: i18n.tr("I would appreciate a donation if you like this app.")
+                wrapMode:Text.WordWrap
+                horizontalAlignment:Text.AlignHCenter
+                width:parent.width
+            }
+            Button {
+                text: i18n.tr("Donate via PayPal")
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: UbuntuColors.orange
+                onClicked: {
+                    Qt.openUrlExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=52XD8L5GZPPNW");
+                }
+            }
+
+
+
+            Text {
                 text: i18n.tr("Using TankerKoenig.de's API. Thank you for believing in open data!") + "\n" + "CC BY 4.0 -  http://creativecommons.tankerkoenig.de"
                 wrapMode:Text.WordWrap
                 horizontalAlignment:Text.AlignHCenter
@@ -69,7 +84,7 @@ Page {
                 width:parent.width
             }
             Text {
-                text: i18n.tr("Using data from spritpreisrechner.at") + "\n" + "http://www.spritpreisrechner.at/"
+                text: i18n.tr("Using data from spritpreisrechner.at.") + "\n" + "http://www.spritpreisrechner.at/"
                 wrapMode:Text.WordWrap
                 horizontalAlignment:Text.AlignHCenter
                 width:parent.width
