@@ -13,11 +13,11 @@ Qt.include("apiindex.js")
 
 // import sub-APIs
 var apis = {};
-Qt.include("tankerkoenig/api.js");
+Qt.include("tankerkoenig.js");
 apis["tankerkoenig"]=tankerkoenigApi;
-Qt.include("mygasfeed/api.js");
+Qt.include("mygasfeed.js");
 apis["mygasfeed"]=mygasfeedApi;
-Qt.include("spritpreisrechner/api.js");
+Qt.include("spritpreisrechner.js");
 apis["spritpreisrechner"]=spritpreisrechnerApi;
 
 
