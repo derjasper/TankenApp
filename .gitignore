@@ -4,3 +4,4 @@ Makefile
 .git
 po
 TankenApp.pro.user
+TankenApp.pro.user.*
