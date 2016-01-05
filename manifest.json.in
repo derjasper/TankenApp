@@ -1,6 +1,6 @@
 {
     "name": "com.ubuntu.developer.derjasper.tankenapp",
-    "description": "description of TankenApp",
+    "description": "Real-time fuel prices",
     "architecture": "@CLICK_ARCH@",
     "title": "TankenApp",
     "hooks": {
