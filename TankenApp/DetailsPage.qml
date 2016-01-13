@@ -204,16 +204,26 @@ Page {
                         }
                     }
 
-                    Button {
-                        anchors.right: parent.right
+                    Row {
+                       anchors.right: parent.right
+                       spacing: units.gu(1)
 
-                        text: i18n.tr("Navigate with HERE")
-                        color: UbuntuColors.warmGrey
-                        onClicked: {
-                            Qt.openUrlExternally("https://www.here.com/directions/drive//:"+stationDetails.model.lat+","+stationDetails.model.lng+"?map="+stationDetails.model.lat+","+stationDetails.model.lng+",14,traffic");
-                        }
+                       Button {
+                           text: i18n.tr("Navigate")
+                           color: UbuntuColors.warmGrey
+                           onClicked: {
+                               Qt.openUrlExternally("geo://"+stationDetails.model.lat+","+stationDetails.model.lng);
+                           }
+                       }
+
+                       Button {
+                           text: i18n.tr("Navigate with HERE")
+                           strokeColor: UbuntuColors.warmGrey
+                           onClicked: {
+                               Qt.openUrlExternally("https://www.here.com/directions/drive//:"+stationDetails.model.lat+","+stationDetails.model.lng+"?map="+stationDetails.model.lat+","+stationDetails.model.lng+",14,traffic");
+                           }
+                       }
                     }
-
                 }
 
             }
