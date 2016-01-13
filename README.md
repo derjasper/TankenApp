@@ -21,3 +21,7 @@ Please help adding more APIs!
 ## Translations
 
 Please submit translations at https://www.transifex.com/derjasper/tankenapp/.
+
+## Buildig the app
+
+Before you can build the app you need to rename the file `TankenApp/api/apikeys_template.js` to `apikeys.js` and request all needed api keys.
