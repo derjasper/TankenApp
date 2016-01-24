@@ -1,7 +1,7 @@
 .pragma library
 
 Qt.include("apikeys.js")
-Qt.include("apiindex.js")
+Qt.include("apisettings.js")
 
 /**
   API for getting fuel prices

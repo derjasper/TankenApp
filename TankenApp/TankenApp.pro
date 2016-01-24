@@ -39,3 +39,7 @@ INSTALLS+=config_files qml_files qml1_files desktop_file
 
 
 QT += location
+
+DISTFILES += \
+    TankenSettings.qml \
+    api/apiindex.js

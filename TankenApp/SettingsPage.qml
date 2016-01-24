@@ -9,7 +9,7 @@ Page {
 
     signal settingsChanged
 
-    property string type: "e5"
+    property string type: "diesel"
     property string sort: "price"
     property int radius: 5
 
@@ -28,15 +28,15 @@ Page {
         OptionSelector {
             id: typeSelector
             text: i18n.tr("Fuel type")
-            model: makeModel(Api.apiindex[api].features.types)
+            model: makeModel(Api.apisettings[api].features.types)
             selectedIndex: keyToIndex(type);
             onSelectedIndexChanged: {
                 type = indexToKey(selectedIndex)
             }
 
             function keyToIndex(key) {
-                for (var i=0; i<Api.apiindex[api].features.types.length; i++) {
-                    if (Api.apiindex[api].features.types[i]==key)
+                for (var i=0; i<Api.apisettings[api].features.types.length; i++) {
+                    if (Api.apisettings[api].features.types[i]==key)
                         return i;
                 }
 
@@ -44,9 +44,9 @@ Page {
             }
 
             function indexToKey(idx) {
-                if (Api.apiindex[api].features.types.length<=idx)
+                if (Api.apisettings[api].features.types.length<=idx)
                     return 0;
-                return Api.apiindex[api].features.types[idx];
+                return Api.apisettings[api].features.types[idx];
             }
 
             function makeModel(list) {
@@ -69,7 +69,7 @@ Page {
             Slider {
                 id: radiusSelector
                 function formatValue(v) {
-                    return v.toFixed(0) + " " +  Api.apiindex[api].unit.distance
+                    return v.toFixed(0) + " " +  Api.apisettings[api].unit.distance
                 }
                 minimumValue: 1
                 maximumValue: 25
@@ -85,15 +85,15 @@ Page {
         OptionSelector {
             id: sortSelector
             text: i18n.tr("sort by")
-            model: makeModel(Api.apiindex[api].features.sort)
+            model: makeModel(Api.apisettings[api].features.sort)
             selectedIndex: keyToIndex(type);
             onSelectedIndexChanged: {
                 sort = indexToKey(selectedIndex)
             }
 
             function keyToIndex(key) {
-                for (var i=0; i<Api.apiindex[api].features.sort.length; i++) {
-                    if (Api.apiindex[api].features.sort[i]==key)
+                for (var i=0; i<Api.apisettings[api].features.sort.length; i++) {
+                    if (Api.apisettings[api].features.sort[i]==key)
                         return i;
                 }
 
@@ -101,9 +101,9 @@ Page {
             }
 
             function indexToKey(idx) {
-                if (Api.apiindex[api].features.sort.length<=idx)
+                if (Api.apisettings[api].features.sort.length<=idx)
                     return 0;
-                return Api.apiindex[api].features.sort[idx];
+                return Api.apisettings[api].features.sort[idx];
             }
 
             function makeModel(list) {

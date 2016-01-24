@@ -212,7 +212,7 @@ Page {
                            text: i18n.tr("Navigate")
                            color: UbuntuColors.warmGrey
                            onClicked: {
-                               Qt.openUrlExternally("geo://"+stationDetails.model.lat+","+stationDetails.model.lng);
+                               Qt.openUrlExternally("geo:"+stationDetails.model.lat+","+stationDetails.model.lng);
                            }
                        }
 
