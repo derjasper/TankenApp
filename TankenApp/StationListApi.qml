@@ -10,7 +10,7 @@ Item {
 
     property string api: ""
 
-    property var apiProps: Api.apiindex[api]
+    property var apiProps: Api.apisettings[api]
 
     property bool loading: false
     property bool err: false

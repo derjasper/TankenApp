@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import Ubuntu.Components 1.3
 import QtLocation 5.3
-import "api/api.js" as Api
+import "api/apiindex.js" as Api
 
 Page {
     title: i18n.tr("Select Source")

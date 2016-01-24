@@ -1,12 +1,11 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
-import Qt.labs.settings 1.0
 import QtPositioning 5.4
 import Ubuntu.Layouts 1.0
 import Ubuntu.Components.Popups 1.3
-
-import Ubuntu.Components.ListItems 1.3 as ListItems
 import "helper.js" as Helper;
+
+import Ubuntu.Connectivity 1.0
 
 MainView {
     // objectName for functional testing purposes (autopilot-qt5)
@@ -22,19 +21,8 @@ MainView {
     width: units.gu(100)
     height: units.gu(75)
 
-    StationListApi {
-        id: stationModel
-        api: settings.api
-    }
-
-    Settings {
+    TankenSettings {
         id: settings
-        property string type: "e5"
-        property string sort: "price"
-        property string rad: "5"
-        property double lat: 0
-        property double lng: 0
-        property string api: "tankerkoenig"
     }
 
 
@@ -48,29 +36,39 @@ MainView {
         id: pageStack
 
         Component.onCompleted: {
-            push(main)
-
-            refreshList();
-        }
-
-
-
-        function refreshList() {
-            if (settings.lat==0 && settings.lng==0) {
-                positionSrc.update();
+            if (!settings.firstStart) {
+                push(main)
+                main.refreshList();
             }
-
-            stationModel.type= settings.type
-            stationModel.sort= settings.sort
-            stationModel.rad= settings.rad
-            stationModel.lat= (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.latitude : settings.lat
-            stationModel.lng= (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.longitude : settings.lng
-
-            stationModel.refresh();
+            else {
+                push(main)
+                main.refreshList();
+                push(apiPage)
+                settings.firstStart = false;
+            }
         }
 
         Page {
             id: main
+
+            StationListApi {
+                id: stationModel
+                api: settings.api
+                type: settings.type
+                sort: settings.sort
+                rad: settings.rad
+                lat: (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.latitude : settings.lat
+                lng: (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.longitude : settings.lng
+
+            }
+
+            function refreshList() {
+                if (settings.lat==0 && settings.lng==0) {
+                    positionSrc.update();
+                }
+
+                stationModel.refresh();
+            }
 
             flickable: layouts.currentLayout == "mobile" ? list : null
 
@@ -81,7 +79,9 @@ MainView {
                     Action {
                         iconName: "reload"
                         text: i18n.tr("Reload")
-                        onTriggered: stationModel.refresh()
+                        onTriggered: {
+                            main.refreshList();
+                        }
                     },
                     Action {
                         iconName: "settings"
@@ -160,7 +160,9 @@ MainView {
                         pullToRefresh {
                             enabled: true
                             refreshing: stationModel.loading
-                            onRefresh: stationModel.refresh()
+                            onRefresh: {
+                                main.refreshList()
+                            }
                         }
 
                         delegate: ListItem {
@@ -223,8 +225,13 @@ MainView {
                         visible : stationModel.model.count > 0 || stationModel.loading
                     }
                     Text{
-                        visible : stationModel.model.count == 0 && !stationModel.loading
+                        visible : stationModel.model.count == 0 && !stationModel.loading && NetworkingStatus.online
                         text: i18n.tr("no results")
+                        anchors.centerIn: parent
+                    }
+                    Text {
+                        visible: stationModel.model.count == 0 && !stationModel.loading && !NetworkingStatus.online
+                        text: i18n.tr("no Internet connection")
                         anchors.centerIn: parent
                     }
 
@@ -242,8 +249,8 @@ MainView {
                     anchors.fill:parent
 
                     model: stationModel.model
-                    centerLatitude: settings.lat
-                    centerLongitude: settings.lng
+                    centerLatitude: (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.latitude : settings.lat
+                    centerLongitude: (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.longitude : settings.lng
 
                     onMarkerClicked: {
                         pageStack.push(details,{stationId: currentId})
@@ -261,8 +268,8 @@ MainView {
                 anchors.fill:parent
 
                 model: stationModel.model
-                centerLatitude: settings.lat
-                centerLongitude: settings.lng
+                centerLatitude: (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.latitude : settings.lat
+                centerLongitude: (settings.lat==0 && settings.lng==0) ? positionSrc.position.coordinate.longitude : settings.lng
 
                 onMarkerClicked: {
                     pageStack.push(details,{stationId: currentId})
@@ -285,7 +292,7 @@ MainView {
                 settings.rad = radius
                 settings.sort = sort
 
-                pageStack.refreshList()
+                main.refreshList()
             }
         }
 
@@ -303,7 +310,7 @@ MainView {
                 settings.lat = lat
                 settings.lng = lng
 
-                pageStack.refreshList()
+                main.refreshList()
             }
         }
         ApiPage {
@@ -313,7 +320,7 @@ MainView {
             onSetApi: {
                 settings.api = api
 
-                pageStack.refreshList()
+                main.refreshList()
             }
         }
 

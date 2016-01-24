@@ -11,7 +11,7 @@ Item {
 
     property string api: ""
 
-    property var apiProps: Api.apiindex[api]
+    property var apiProps: Api.apisettings[api]
 
     function refresh() {
         if (stationId=="")
