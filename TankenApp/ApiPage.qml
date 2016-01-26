@@ -56,9 +56,8 @@ Page {
     }
 
     Component.onCompleted: {
-        for (var key in Api.apiindex) {
-            Api.apiindex[key].id = key;
-            jsonModel.append(Api.apiindex[key]);
-        }
+        Api.apiindex.forEach(function(val) {
+            jsonModel.append(val);
+        });
     }
 }

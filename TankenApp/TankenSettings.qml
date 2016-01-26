@@ -22,6 +22,3 @@ Settings {
             sort = Api.apisettings[api].features.sort[0];
     }
 }
-
-
-
