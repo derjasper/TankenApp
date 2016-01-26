@@ -2,6 +2,6 @@ Makefile
 *.tmp
 .bzr
 .git
-po
 TankenApp.pro.user
 TankenApp.pro.user.*
+po/template.pot
