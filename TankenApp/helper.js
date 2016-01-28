@@ -2,41 +2,108 @@ function renderLastUpdate(date) {
     var diff = ( (new Date()).getTime() - (new Date(date)).getTime() ) / 1000 / 60 / 60;
 
     if (diff < 1)
-        return "recent";
+        return i18n.tr("recent");
 
     if (diff < 24)
-        return "last day";
+        return i18n.tr("last day");
 
     if (diff < 24 * 7)
-        return "last week";
+        return i18n.tr("last week");
 
     if (diff < 24 * 7 * 28)
-        return "last month";
+        return i18n.tr("last month");
 
-    return "outdated";
+    return i18n.tr("outdated");
 }
 
-function fuelKeyToString(key) {
-    if (key=="e5")
-        return i18n.tr("Petrol E5");
+function fuelKeyToString(api,fuel) {
+    if (api == "tankerkoenig") {
+        if (fuel=="e5") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Benzin E5 (Fuel E5)");
+        }
 
-    if (key=="e10")
-        return i18n.tr("Petrol E10");
+        if (fuel=="e10") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Benzin E10 (Fuel E5)");
+        }
 
-    if (key=="diesel")
-        return i18n.tr("Diesel");
+        if (fuel=="diesel") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Diesel");
+        }
+    }
 
-    if (key=="super95")
-        return i18n.tr("Super 95");
+    if (api == "spritpreisrechner") {
+        if (fuel=="diesel") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Diesel");
+        }
 
-    if (key=="reg")
-        return i18n.tr("Regular Gasoline");
+        if (fuel=="super95") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Super 95 (Fuel 95)");
+        }
+    }
 
-    if (key=="mid")
-        return i18n.tr("Mid-Grade Gasoline");
+    if (api == "mygasfeed") {
+        if (fuel=="diesel") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Diesel");
+        }
 
-    if (key=="pre")
-        return i18n.tr("Premium Gasoline");
+        if (fuel=="reg"){
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Regular Gasoline");
+        }
+
+        if (fuel=="mid"){
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Mid-Grade Gasoline");
+        }
+
+        if (fuel=="pre"){
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Premium Gasoline");
+        }
+    }
+
+    if (api == "geoportalgasolineras") {
+        if (fuel=="gpr") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Gasolina 95 Protección (Unleaded 95)");
+        }
+
+        if (fuel=="g98") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Gasolina  98 (Fuel 98)");
+        }
+
+        if (fuel=="goa") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Gasoleo A (Diesel)");
+        }
+
+        if (fuel=="ngo") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Nuevo Gasoleo A (Diesel+)");
+        }
+
+        if (fuel=="bio") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Biodiésel (Biodiesel)");
+        }
+
+        if (fuel=="bie") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Bioetanol (Bioethanol)");
+        }
+
+        if (fuel=="gnc") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Gas Natural Comprimido (Compressed natural gas)");
+        }
+    }
 
     return "";
 }

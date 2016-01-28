@@ -139,7 +139,7 @@ Page {
                             visible: stationDetails.model.openingTimes != "null"
                             model: stationDetails.model.openingTimes
                             Label {
-                                text: modelData.text+": "+modelData.start+" - "+modelData.end
+                                text: modelData.text + (modelData.start != "null" && modelData.end != "null" ? (": "+modelData.start+" - "+modelData.end) : "")
                             }
                         }
                     }

@@ -11,5 +11,9 @@ var apikey = {
     spritpreisrechner: {
         key: "", // no api key needed
         url: "http://www.spritpreisrechner.at/espritmap-app/GasStationServlet"
+    },
+    geoportalgasolineras: {
+        key: "", // no api key needed, service hosted by TankenApp's developer
+        url: "http://localhost:8081/fuelSpain/"
     }
 };
