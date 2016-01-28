@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Jasper Nalbach <jasper@bluetreehouse.de>, 2016
 # Tobi o_o <tobirium@gmail.com>, 2016
@@ -9,14 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TankenApp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-24 09:45+0100\n"
+"POT-Creation-Date: 2016-01-28 19:24+0100\n"
 "PO-Revision-Date: 2016-01-24 20:50+0000\n"
 "Last-Translator: Jasper Nalbach <jasper@bluetreehouse.de>\n"
-"Language-Team: German (http://www.transifex.com/derjasper/tankenapp/language/de/)\n"
+"Language-Team: German (http://www.transifex.com/derjasper/tankenapp/language/"
+"de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:6
@@ -36,7 +37,8 @@ msgstr "Keine Garantie für korrekte Preise und Verfügbarkeit"
 msgid ""
 "For bug reports, pull requests and information on how to translate, please "
 "go to the GitHub project."
-msgstr "Für Bugs, Pull Requests und Übersetzungen gehe bitte zum Projekt auf GitHub."
+msgstr ""
+"Für Bugs, Pull Requests und Übersetzungen gehe bitte zum Projekt auf GitHub."
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:49
 msgid "TankenApp on GitHub"
@@ -52,11 +54,13 @@ msgstr "Spenden mit PayPal"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:75
 msgid "Using TankerKoenig.de's API. Thank you for believing in open data!"
-msgstr "Verwendet TankerKoenig.de's API. Danke für die Unterstützung von Open Data!"
+msgstr ""
+"Verwendet TankerKoenig.de's API. Danke für die Unterstützung von Open Data!"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:81
 msgid "Using myGasFeed.com's API. Thank you for believing in open data!"
-msgstr "Verwendet myGasFeed.com's API. Danke für die Unterstützung von Open Data!"
+msgstr ""
+"Verwendet myGasFeed.com's API. Danke für die Unterstützung von Open Data!"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:87
 msgid "Using data from spritpreisrechner.at."
@@ -64,7 +68,8 @@ msgstr "Verwendet Daten von spritpreisrechner.at."
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:93
 msgid "Licensed under GPLv3. Source code available at:"
-msgstr "Lizensiert unter den Bedingungen der GPLv3. Quellcode verfügbar unter: "
+msgstr ""
+"Lizensiert unter den Bedingungen der GPLv3. Quellcode verfügbar unter: "
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/ApiPage.qml:7
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:98
@@ -195,41 +200,54 @@ msgstr "Entfernung"
 msgid "price"
 msgstr "Preis"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:3
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:4
 msgid "Tankerkoenig.de"
 msgstr "Tankerkoenig.de"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:4
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:5
 msgid "official MTS-K data for Germany"
 msgstr "offizielle MTS-K-Daten für Deutschland"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:5
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:6
 msgid "CC BY 4.0 - http://creativecommons.tankerkoenig.de"
 msgstr "CC BY 4.0 - http://creativecommons.tankerkoenig.de"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:8
-msgid "myGasFeed.com"
-msgstr "myGasFeed.com"
-
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:9
-msgid "user contributed data for USA"
-msgstr "von Benutzer gepflegte Daten für USA"
-
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:10
-msgid "http://www.mygasfeed.com/"
-msgstr "http://www.mygasfeed.com/"
-
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:13
 msgid "spritpreisrechner.at"
 msgstr "spritpreisrechner.at"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:14
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:11
 msgid "official data for Austria"
 msgstr "offizielle Daten für Österreich"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:15
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:12
 msgid "http://spritpreisrechner.at/"
 msgstr "http://spritpreisrechner.at/"
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:16
+msgid "geoportalgasolineras.es (beta)"
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:17
+#, fuzzy
+msgid "official data for Spain"
+msgstr "offizielle Daten für Österreich"
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:18
+msgid "http://www.geoportalgasolineras.es/"
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:22
+msgid "myGasFeed.com"
+msgstr "myGasFeed.com"
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:23
+msgid "user contributed data for USA"
+msgstr "von Benutzer gepflegte Daten für USA"
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:24
+msgid "http://www.mygasfeed.com/"
+msgstr "http://www.mygasfeed.com/"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/build-TankenApp-Unbenannt-Release/TankenApp/TankenApp.desktop.h:1
 msgid "TankenApp"

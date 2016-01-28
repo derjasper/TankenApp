@@ -12,6 +12,12 @@ var apiindex = [
                 license: i18n.tr("http://spritpreisrechner.at/")
             },
             {
+                id: "geoportalgasolineras",
+                name: i18n.tr("geoportalgasolineras.es (beta)"),
+                description: i18n.tr("official data for Spain"),
+                license: i18n.tr("http://www.geoportalgasolineras.es/")
+            },
+            {
                 id: "mygasfeed",
                 name: i18n.tr("myGasFeed.com"),
                 description: i18n.tr("user contributed data for USA"),

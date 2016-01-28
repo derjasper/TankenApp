@@ -53,7 +53,7 @@ Page {
                 var model = [];
 
                 for (var i=0; i<list.length; i++) {
-                    model.push(Helper.fuelKeyToString(list[i]));
+                    model.push(Helper.fuelKeyToString(api,list[i]));
                 }
 
                 return model;

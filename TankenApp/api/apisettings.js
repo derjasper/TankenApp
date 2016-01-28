@@ -25,5 +25,15 @@ var apisettings = {
             types: ["diesel", "super95"],
             sort: ["price"]
         }
+    },
+    geoportalgasolineras: {
+        unit: {
+            distance: "km"
+        },
+        features: {
+            types: ["gpr","g98","goa","ngo","bio","bie","gnc"],
+            sort: ["price","dist"]
+        }
     }
 };
+
