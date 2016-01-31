@@ -11,13 +11,16 @@ Page {
 
     property string type: "diesel"
     property string sort: "price"
-    property int radius: 5
+    property double radius: 5
 
     property string api
 
     onActiveChanged: {
         if (!active)
             settingsChanged()
+        else {
+            radiusSelector.value = radius;
+        }
     }
 
     Column {
@@ -73,7 +76,6 @@ Page {
                 }
                 minimumValue: 1
                 maximumValue: 25
-                value: radius
                 live: false
                 onValueChanged: {
                     radius = value

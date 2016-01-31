@@ -8,7 +8,7 @@ Settings {
 
     property string type: "diesel"
     property string sort: "price"
-    property string rad: "5"
+    property double rad: 5
     property double lat: 0
     property double lng: 0
     property string api: "tankerkoenig"
