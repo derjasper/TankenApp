@@ -14,6 +14,6 @@ var apikey = {
     },
     geoportalgasolineras: {
         key: "", // no api key needed, service hosted by TankenApp's developer
-        url: "http://localhost:8081/fuelSpain/"
+        url: "http://bluetreehouse.de:8081/fuelSpain/"
     }
 };

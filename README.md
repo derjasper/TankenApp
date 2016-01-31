@@ -13,10 +13,12 @@ Real time fuel prices.
 ## Supported APIs
 
 * Tankerkoenig.de (official MTS-K data for Germany - https://creativecommons.tankerkoenig.de/)
-* myGasFeed.com (user contributed data in USA - http://www.mygasfeed.com/)
 * Spritpreisrechner.at (official data for Austria - http://spritpreisrechner.at/)
+* geoportalgasolineras.es (official data for Spain - http://geoportalgasolineras.es/), uses self-hosted web service (beta)
+* myGasFeed.com (user contributed data in USA - http://www.mygasfeed.com/)
 
-Please help adding more APIs!
+
+Please help adding more data sources!
 
 ## Translations
 
