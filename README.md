@@ -22,7 +22,7 @@ Please help adding more data sources!
 
 ## Translations
 
-Please submit translations at https://www.transifex.com/derjasper/tankenapp/.
+Please submit translations at https://translations.launchpad.net/tankenapp.
 
 ## Buildig the app
 
