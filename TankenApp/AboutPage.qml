@@ -95,6 +95,12 @@ Page {
                         width:parent.width
                     }
 
+                    Text {
+                        text: i18n.tr("Translations: ") + "\n" + "Anne017 (fr)"
+                        wrapMode:Text.WordWrap
+                        horizontalAlignment:Text.AlignHCenter
+                        width:parent.width
+                    }
                 }
             }
         }
