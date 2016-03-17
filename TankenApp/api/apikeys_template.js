@@ -15,5 +15,9 @@ var apikey = {
     geoportalgasolineras: {
         key: "", // no api key needed, service hosted by TankenApp's developer
         url: "http://bluetreehouse.de:8081/fuelSpain/"
+    },
+    nrel: {
+        key: "", // get it here: https://developer.nrel.gov/docs/api-key/
+        url: "https://developer.nrel.gov/api/alt-fuel-stations/v1/"
     }
 };

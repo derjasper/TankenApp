@@ -21,6 +21,8 @@ Qt.include("spritpreisrechner.js");
 apis["spritpreisrechner"]=spritpreisrechnerApi;
 Qt.include("geoportalgasolineras.js");
 apis["geoportalgasolineras"]=geoportalgasolinerasApi;
+Qt.include("nrel.js");
+apis["nrel"]=nrelApi;
 
 
 /**

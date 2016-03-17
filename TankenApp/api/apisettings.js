@@ -34,6 +34,15 @@ var apisettings = {
             types: ["gpr","g98","goa","ngo","bio","bie","gnc"],
             sort: ["price","dist"]
         }
+    },
+    nrel: {
+        unit: {
+            distance: "miles"
+        },
+        features: {
+            types: ["BD", "CNG", "E85", "ELEC", "HY", "LNG", "LPG"], // TODO translate
+            sort: ["dist"]
+        }
     }
 };
 

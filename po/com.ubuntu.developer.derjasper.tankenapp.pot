@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-01 21:50+0100\n"
+"POT-Creation-Date: 2016-03-17 20:38+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,11 @@ msgstr ""
 msgid "Licensed under GPLv3. Source code available at:"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:135
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:99
+msgid "Translations: "
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:141
 msgid "TankenApp is made possible by these data sources:"
 msgstr ""
 
@@ -246,11 +250,11 @@ msgstr ""
 msgid "Gas Natural Comprimido (Compressed natural gas)"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:113
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:125
 msgid "distance"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:116
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:128
 msgid "price"
 msgstr ""
 
@@ -291,14 +295,26 @@ msgid "http://www.geoportalgasolineras.es/"
 msgstr ""
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:22
-msgid "myGasFeed.com"
+msgid "nrel.gov Alternative Fuel"
 msgstr ""
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:23
-msgid "user contributed data for USA"
+msgid "official data for alternative fuel in USA"
 msgstr ""
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:24
+msgid "http://www.nrel.gov/"
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:28
+msgid "myGasFeed.com"
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:29
+msgid "user contributed data for USA"
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:30
 msgid "http://www.mygasfeed.com/"
 msgstr ""
 

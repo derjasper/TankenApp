@@ -105,6 +105,18 @@ function fuelKeyToString(api,fuel) {
         }
     }
 
+    if (api == "nrel") {
+        /* TODO
+BD 	Biodiesel (B20 and above)
+CNG 	Compressed Natural Gas
+E85 	Ethanol (E85)
+ELEC 	Electric
+HY 	Hydrogen
+LNG 	Liquefied Natural Gas
+LPG 	Liquefied Petroleum Gas (Propane)
+*/
+    }
+
     return "";
 }
 

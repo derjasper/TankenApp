@@ -18,6 +18,12 @@ var apiindex = [
                 license: i18n.tr("http://www.geoportalgasolineras.es/")
             },
             {
+                id: "nrel",
+                name: i18n.tr("nrel.gov Alternative Fuel"),
+                description: i18n.tr("official data for alternative fuel in USA"),
+                license: i18n.tr("http://www.nrel.gov/")
+            },
+            {
                 id: "mygasfeed",
                 name: i18n.tr("myGasFeed.com"),
                 description: i18n.tr("user contributed data for USA"),
