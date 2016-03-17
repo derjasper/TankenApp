@@ -1,5 +1,7 @@
 var nrelApi = {};
 
+// TODO a challenge because prices are not delivered, only stations -> should this be integrated into tankenapp?
+
 nrelApi.getList = function(apikey, url, lat, lng, rad, type, sort, callback) {
     if (sort=="price") {
         sort="price_"+type;
