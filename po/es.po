@@ -1,22 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Jasper Nalbach <jasper@bluetreehouse.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: TankenApp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-01 21:50+0100\n"
-"PO-Revision-Date: 2016-02-01 20:51+0000\n"
+"POT-Creation-Date: 2016-03-26 12:16+0100\n"
+"PO-Revision-Date: 2016-03-17 15:03+0000\n"
 "Last-Translator: Jasper Nalbach <jasper@bluetreehouse.de>\n"
-"Language-Team: Spanish (http://www.transifex.com/derjasper/tankenapp/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/derjasper/tankenapp/"
+"language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Launchpad-Export-Date: 2016-04-07 10:04+0000\n"
+"X-Generator: Launchpad (build 17990)\n"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:8
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:9
@@ -58,7 +60,11 @@ msgstr ""
 msgid "Licensed under GPLv3. Source code available at:"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:135
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:99
+msgid "Translations: "
+msgstr ""
+
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:141
 msgid "TankenApp is made possible by these data sources:"
 msgstr ""
 
@@ -175,88 +181,74 @@ msgstr ""
 msgid "outdated"
 msgstr ""
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:23
 msgid "Benzin E5 (Fuel E5)"
 msgstr ""
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:28
 msgid "Benzin E10 (Fuel E5)"
 msgstr ""
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:33
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:40
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:52
 msgid "Diesel"
 msgstr ""
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:45
 msgid "Super 95 (Fuel 95)"
 msgstr ""
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:57
 msgid "Regular Gasoline"
 msgstr ""
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:62
 msgid "Mid-Grade Gasoline"
 msgstr ""
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:67
 msgid "Premium Gasoline"
 msgstr ""
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:74
 msgid "Gasolina 95 Protección (Unleaded 95)"
 msgstr "Gasolina 95 Protección"
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:79
 msgid "Gasolina  98 (Fuel 98)"
 msgstr "Gasolina 98"
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:84
 msgid "Gasoleo A (Diesel)"
 msgstr "Gasoleo A"
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:89
 msgid "Nuevo Gasoleo A (Diesel+)"
 msgstr "Nuevo Gasoleo A"
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:94
 msgid "Biodiésel (Biodiesel)"
 msgstr "Biodiésel"
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:99
 msgid "Bioetanol (Bioethanol)"
 msgstr "Bioetanol"
 
-#. TRANSLATORS: include original name and append translation in brackets if
-#. different
+#. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:104
 msgid "Gas Natural Comprimido (Compressed natural gas)"
 msgstr "Gas Natural Comprimido"

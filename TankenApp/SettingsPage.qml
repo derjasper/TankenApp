@@ -5,12 +5,15 @@ import "helper.js" as Helper
 
 Page {
     id: filter
-    title: i18n.tr("Filter")
+
+    header: PageHeader {
+        id: header
+        title: i18n.tr("Filter")
+    }
 
     signal settingsChanged
 
     property string type: "diesel"
-    property string sort: "price"
     property double radius: 5
 
     property string api
@@ -24,7 +27,13 @@ Page {
     }
 
     Column {
-        anchors.fill: parent
+        anchors {
+            left: parent.left
+            bottom: parent.bottom
+            right: parent.right
+            top: header.bottom
+        }
+
         anchors.margins: units.gu(2)
         spacing: units.gu(2)
 
@@ -32,9 +41,11 @@ Page {
             id: typeSelector
             text: i18n.tr("Fuel type")
             model: makeModel(Api.apisettings[api].features.types)
-            selectedIndex: keyToIndex(type);
             onSelectedIndexChanged: {
                 type = indexToKey(selectedIndex)
+            }
+            Component.onCompleted: {
+                selectedIndex = keyToIndex(type)
             }
 
             function keyToIndex(key) {
@@ -81,41 +92,6 @@ Page {
                     radius = value
                 }
                 width:parent.width
-            }
-        }
-
-        OptionSelector {
-            id: sortSelector
-            text: i18n.tr("sort by")
-            model: makeModel(Api.apisettings[api].features.sort)
-            selectedIndex: keyToIndex(type);
-            onSelectedIndexChanged: {
-                sort = indexToKey(selectedIndex)
-            }
-
-            function keyToIndex(key) {
-                for (var i=0; i<Api.apisettings[api].features.sort.length; i++) {
-                    if (Api.apisettings[api].features.sort[i]==key)
-                        return i;
-                }
-
-                return 0;
-            }
-
-            function indexToKey(idx) {
-                if (Api.apisettings[api].features.sort.length<=idx)
-                    return 0;
-                return Api.apisettings[api].features.sort[idx];
-            }
-
-            function makeModel(list) {
-                var model = [];
-
-                for (var i=0; i<list.length; i++) {
-                    model.push(Helper.sortKeyToString(list[i]));
-                }
-
-                return model;
             }
         }
     }

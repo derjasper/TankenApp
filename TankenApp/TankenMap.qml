@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import QtLocation 5.3
+import QtLocation 5.5
 
 Item {
     id: root

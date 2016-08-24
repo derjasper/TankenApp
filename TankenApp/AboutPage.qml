@@ -5,8 +5,17 @@ import "api/apiindex.js" as Api
 
 
 Page {
-    title: i18n.tr("About")
-    head.sections.model: [i18n.tr("About"), i18n.tr("Data Sources")]
+    id: aboutPage
+
+    header: PageHeader {
+        title: i18n.tr("About")
+
+        extension: Sections {
+            model: [i18n.tr("About"), i18n.tr("Data Sources")]
+        }
+    }
+
+    clip: true
 
     VisualItemModel {
         id: tabs
@@ -173,10 +182,15 @@ Page {
         id: tabView
         model: tabs
         interactive: false
-        anchors.fill: parent
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            top: aboutPage.header.bottom
+        }
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
-        currentIndex: aboutPage.head.sections.selectedIndex
+        currentIndex: aboutPage.header.extension.selectedIndex
         highlightMoveDuration: UbuntuAnimation.SlowDuration
     }
 }

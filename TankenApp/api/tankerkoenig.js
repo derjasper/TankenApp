@@ -28,7 +28,7 @@ tankerkoenigApi.getList = function(apikey, url, lat, lng, rad, type, sort, callb
                     brand: (data[key].brand != null ? data[key].brand : "null"),
                     dist: data[key].dist+"",
                     dist_unit: "km",
-                    price: data[key].price+"",
+                    price: data[key].price.toFixed(3)+"",
                     price_currency: "EUR",
                     id: data[key].id,
                     address: data[key].street + (data[key].houseNumber==undefined ? "" : " "+data[key].houseNumber ),
@@ -84,7 +84,7 @@ tankerkoenigApi.getDetails = function(apikey, url, id, callback) {
         if (data.e5 != null) {
             obj.fuel.push({
                 type: "e5",
-                price: data.e5,
+                price: data.e5.toFixed(3) + "",
                 price_currency: "EUR",
                 lastUpdate: "null"
             });
@@ -92,7 +92,7 @@ tankerkoenigApi.getDetails = function(apikey, url, id, callback) {
         if (data.e10 != null) {
             obj.fuel.push({
                 type: "e10",
-                price: data.e10,
+                price: data.e10.toFixed(3) + "",
                 price_currency: "EUR",
                 lastUpdate: "null"
             });
@@ -100,7 +100,7 @@ tankerkoenigApi.getDetails = function(apikey, url, id, callback) {
         if (data.diesel != null) {
             obj.fuel.push({
                 type: "diesel",
-                price: data.diesel,
+                price: data.diesel.toFixed(3) + "",
                 price_currency: "EUR",
                 lastUpdate: "null"
             });
