@@ -110,10 +110,10 @@ function fuelKeyToString(api,fuel) {
 
 function sortKeyToString(key) {
     if (key=="dist")
-        return i18n.tr("distance");
+        return i18n.tr("By Distance");
 
     if (key=="price")
-        return i18n.tr("price");
+        return i18n.tr("By Price");
 
     return "";
 }

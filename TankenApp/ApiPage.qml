@@ -4,13 +4,20 @@ import QtLocation 5.3
 import "api/apiindex.js" as Api
 
 Page {
-    title: i18n.tr("Select Source")
+    id: apiPage
+
+    header: PageHeader {
+        title: i18n.tr("Select Source")
+        flickable: list
+    }
 
     signal setApi(string api)
 
     ListModel { id: jsonModel }
 
     ListView {
+        id: list
+
         anchors.fill: parent
 
         model: jsonModel
@@ -48,7 +55,7 @@ Page {
             onClicked: {
                 setApi(id)
 
-                pageStack.pop()
+                pageStack.removePages(apiPage)
             }
         }
 
