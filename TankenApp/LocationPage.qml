@@ -52,7 +52,7 @@ Page {
     GeocodeModel {
         id: geocodeModel
         plugin: Plugin {
-            preferred:["osm"]
+            name: "osm"
         }
         autoUpdate: false
         query: inputText.text
