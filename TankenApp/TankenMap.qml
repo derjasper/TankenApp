@@ -22,8 +22,12 @@ Item {
         gesture.flickDeceleration: 3000
 
         plugin: Plugin {
-            preferred:["osm"]
+            name: "osm"
+            PluginParameter { name: "osm.mapping.host"; value: "http://c.tile.thunderforest.com/neighbourhood/" }
+            PluginParameter { name: "osm.mapping.copyright"; value: "Maps &copy; Thunderforest<br>Data &copy; OpenStreetMap contributors" }
         }
+
+        activeMapType: supportedMapTypes["7"]
 
         MapItemView {
             model: root.model

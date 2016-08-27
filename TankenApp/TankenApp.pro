@@ -43,5 +43,4 @@ QT += location
 DISTFILES += \
     TankenSettings.qml \
     api/apiindex.js \
-    api/geoportalgasolineras.js \
-    ListPage.qml
+    api/geoportalgasolineras.js

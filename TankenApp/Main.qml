@@ -1,12 +1,9 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
 import QtPositioning 5.4
-import Ubuntu.Layouts 1.0
 import Ubuntu.Components.Popups 1.3
 import "helper.js" as Helper
 import "api/api.js" as Api
-
-// TODO fix openstreetmap
 
 MainView {
     // objectName for functional testing purposes (autopilot-qt5)
