@@ -105,6 +105,84 @@ function fuelKeyToString(api,fuel) {
         }
     }
 
+    if (api == "carburanti") {
+      if (fuel == "1-x") {
+        return i18n.tr("Benzina");
+      }
+
+      if (fuel == "1-0") {
+        return i18n.tr("Benzina (Servito)");
+      }
+
+      if (fuel == "1-1") {
+        return i18n.tr("Benzina (Self)");
+      }
+
+      if (fuel == "2-x") {
+        return i18n.tr("Gasolio");
+      }
+
+      if (fuel == "2-1") {
+        return i18n.tr("Gasolio (Self)");
+      }
+
+      if (fuel == "2-0") {
+        return i18n.tr("Gasolio (Servito)");
+      }
+
+      if (fuel == "3-x") {
+        return i18n.tr("Metano");
+      }
+
+      if (fuel == "4-x" || fuel == '4-0') {
+        return i18n.tr("GPL");
+      }
+
+      if (fuel == "6-1"){
+        return i18n.tr("Hi-Q Diesel (Self)");
+      }
+
+      if (fuel == "6-0") {
+        return i18n.tr("Hi-Q Diesel (Servito)");
+      }
+
+      if (fuel == "6-x") {
+        return i18n.tr("Hi-Q Diesel");
+      }
+
+      if (fuel == '10-0'){
+        return i18n.tr("Gasolio Premium (Servito)");
+      }
+
+      if (fuel == "10-1") {
+        return i18n.tr("Gasolio Premium (Self)");
+      }
+
+      if (fuel == '14-0') {
+        return i18n.tr("Excelium Diesel (Servito)");
+      }
+
+      if ( fuel == '14-1') {
+        return i18n.tr("Excelium Diesel (Self)");
+      }
+
+      if ( fuel == "20-0") {
+        return i18n.tr("Blue Diesel (Servito)");
+      }
+
+      if ( fuel == "20-1") {
+        return i18n.tr("Blue Diesel (Self)");
+      }
+
+      if (fuel == '28-0') {
+        return i18n.tr("HiQ Perform+ (Servito)");
+      }
+
+      if (fuel == "28-1") {
+        return i18n.tr("HiQ Perform+ (Self)");
+      }
+    }
+
     return "";
 }
 
