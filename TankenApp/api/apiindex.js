@@ -22,5 +22,11 @@ var apiindex = [
                 name: i18n.tr("myGasFeed.com"),
                 description: i18n.tr("user contributed data for USA"),
                 license: i18n.tr("http://www.mygasfeed.com/")
+            },
+            {
+              id: "carburanti",
+              name: i18n.tr("carburanti.mise.gov.it"),
+              description: i18n.tr("official data for Italy"),
+              license: i18n.tr("https://carburanti.mise.gov.it/OssPrezziSearch/")
             }
         ];
