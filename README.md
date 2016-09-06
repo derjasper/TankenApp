@@ -15,6 +15,7 @@ Real time fuel prices.
 * Tankerkoenig.de (official MTS-K data for Germany - https://creativecommons.tankerkoenig.de/)
 * Spritpreisrechner.at (official data for Austria - http://spritpreisrechner.at/)
 * geoportalgasolineras.es (official data for Spain - http://geoportalgasolineras.es/), uses self-hosted web service (beta)
+* carburanti.mise.gov.it (official data for Italy - https://carburanti.mise.gov.it/OssPrezziSearch/)
 * myGasFeed.com (user contributed data in USA - http://www.mygasfeed.com/)
 
 

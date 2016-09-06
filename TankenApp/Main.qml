@@ -310,7 +310,7 @@ MainView {
                     }
                 }
 
-                visible : stationModel.model.count > 0 || stationModel.loading
+                visible : stationModel.model.count > 0 && !stationModel.loading
             }
 
             Text {
