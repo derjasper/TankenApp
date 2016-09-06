@@ -170,22 +170,22 @@ MainView {
                         Action {
                             iconName: "filter"
                             text: i18n.tr("Filter")
-                            onTriggered: pageStack.addPageToCurrentColumn(main,filter)
+                            onTriggered: pageStack.addPageToCurrentColumn(main, filter)
                         },
                         Action {
                             iconName: "location"
                             text: i18n.tr("Select Location")
-                            onTriggered: pageStack.addPageToCurrentColumn(main,locationPage)
+                            onTriggered: pageStack.addPageToCurrentColumn(main, locationPage)
                         },
                         Action {
                             iconName: "settings"
                             text: i18n.tr("Select Source")
-                            onTriggered: pageStack.addPageToCurrentColumn(main,apiPage)
+                            onTriggered: pageStack.addPageToCurrentColumn(main, apiPage)
                         },
                         Action {
                             iconName: "info"
                             text: i18n.tr("About")
-                            onTriggered: pageStack.addPageToCurrentColumn(main,aboutPage)
+                            onTriggered: pageStack.addPageToCurrentColumn(main, Qt.resolvedUrl("AboutPage.qml"))
                         }
                     ]
                 }
@@ -243,13 +243,15 @@ MainView {
                 anchors.fill: parent
                 model: stationModel.model
 
+                /* buggy at the moment
                 pullToRefresh {
-                    enabled: true
+                    //enabled: true
                     refreshing: stationModel.loading
                     onRefresh: {
                         main.refreshList()
                     }
                 }
+                */
 
                 delegate: ListItem {
                     contentItem.anchors {
@@ -310,13 +312,19 @@ MainView {
 
                 visible : stationModel.model.count > 0 || stationModel.loading
             }
-            Text{
+
+            Text {
                 visible : stationModel.model.count == 0 && !stationModel.loading
                 text: i18n.tr("No results found. Please check your Internet connection or set another data source.")
                 wrapMode: Text.WordWrap
                 anchors.centerIn: parent
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
+            }
+
+            ActivityIndicator {
+                running: stationModel.loading
+                anchors.centerIn: parent
             }
         }
 
@@ -381,10 +389,6 @@ MainView {
 
                 main.refreshList()
             }
-        }
-
-        AboutPage {
-            id: aboutPage
         }
     }
 }

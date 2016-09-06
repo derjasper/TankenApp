@@ -1,8 +1,7 @@
 import QtQuick 2.0
+import QtLocation 5.4
 import Ubuntu.Components 1.3
- import Ubuntu.Layouts 1.0
-import QtLocation 5.5
-import QtQuick.Layouts 1.1
+
 import "helper.js" as Helper
 
 Page {
@@ -148,12 +147,13 @@ Page {
                 activeMapType: supportedMapTypes["7"]
 
                 MapQuickItem {
-                    anchorPoint.x: 14
-                    anchorPoint.y: 50
-                    sourceItem: Image {
-                        width: 28
-                        height: 50
-                        source: "marker.png"
+                    anchorPoint.x: 32
+                    anchorPoint.y: 64
+                    sourceItem: Icon {
+                        width: 64
+                        height: 64
+                        name: "location-active"
+                        color: UbuntuColors.blue
                     }
 
                     coordinate {

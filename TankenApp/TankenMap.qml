@@ -1,5 +1,6 @@
 import QtQuick 2.0
-import QtLocation 5.5
+import QtLocation 5.4
+import Ubuntu.Components 1.3
 
 Item {
     id: root
@@ -32,16 +33,17 @@ Item {
         MapItemView {
             model: root.model
             delegate: MapQuickItem {
-                anchorPoint.x: 14
-                anchorPoint.y: 50
+                anchorPoint.x: 32
+                anchorPoint.y: 64
                 sourceItem: MouseArea {
-                    width: 28
-                    height: 50
+                    width: 64
+                    height: 64
 
-                    Image {
-                        width: 28
-                        height: 50
-                        source: "marker.png"
+                    Icon {
+                        width: 64
+                        height: 64
+                        name: "location-active"
+                        color: UbuntuColors.blue
                     }
 
                     onClicked: {
