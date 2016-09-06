@@ -14,29 +14,29 @@ var carburantiApi = {};
         var price = null;
         var carburante = type.split('-')[0];
         for ( var n in carburanti) {
-          if (carburanti[n].idCarb == carburante){
-            price = carburanti[n].prezzo;
-          }
+            if (carburanti[n].idCarb == carburante){
+                price = carburanti[n].prezzo;
+            }
         }
         return price;
     }
 
     function calcolateDistance(lat1, lon1, lat2, lon2) {
-      var R = 6371; // Radius of the earth in km
-      var dLat = deg2rad(lat2-lat1);  // deg2rad below
-      var dLon = deg2rad(lon2-lon1);
-      var a =
-        Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon/2) * Math.sin(dLon/2)
+        var R = 6371; // Radius of the earth in km
+        var dLat = deg2rad(lat2-lat1);  // deg2rad below
+        var dLon = deg2rad(lon2-lon1);
+        var a =
+                Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+                Math.sin(dLon/2) * Math.sin(dLon/2)
         ;
-      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-      var d = R * c; // Distance in km
-      return d.toFixed(2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        var d = R * c; // Distance in km
+        return d.toFixed(2);
     }
 
     function deg2rad(deg) {
-      return deg * (Math.PI/180)
+        return deg * (Math.PI/180)
     }
 
     carburantiApi.getList = function(apikey, url, lat, lng, rad, type, sort, callback) {
@@ -99,22 +99,22 @@ var carburantiApi = {};
                 var place = data.array[key].addr.split('-')[1].split(state)[0].trim();
 
                 model.push({
-                    id: data.array[key].name,
-                    name: data.array[key].name,
-                    lat: data.array[key].lat,
-                    lng: data.array[key].lon,
-                    brand: data.array[key].bnd,
-                    dist: calcolateDistance(data.center.first, data.center.second, data.array[key].lat, data.array[key].lon),
-                    dist_unit: "km",
-                    price: getPrice(data.array[key].carburanti, type),
-                    price_currency: "EUR",
-                    address: address,
-                    postCode: zipcode,
-                    place: place,
-                    state: state,
-                    country: "Italia",
-                    lastUpdate: data.array[key].dIns,
-                    isOpen: "null"
+                   id: data.array[key].name,
+                   name: data.array[key].name,
+                   lat: data.array[key].lat,
+                   lng: data.array[key].lon,
+                   brand: data.array[key].bnd,
+                   dist: calcolateDistance(data.center.first, data.center.second, data.array[key].lat, data.array[key].lon),
+                   dist_unit: "km",
+                   price: getPrice(data.array[key].carburanti, type),
+                   price_currency: "EUR",
+                   address: address,
+                   postCode: zipcode,
+                   place: place,
+                   state: state,
+                   country: "Italia",
+                   lastUpdate: data.array[key].dIns,
+                   isOpen: "null"
 
                 });
             }
@@ -163,28 +163,28 @@ var carburantiApi = {};
 
 
             var obj = {
-              id: data.id,
-              name: data.name,
-              brand: data.bnd,
-              address: address,
-              postCode: zipcode,
-              place: place,
-              state: state,
-              country: "Italia",
-              isOpen: "null",
-              lat: data.lat,
-              lng: data.lon,
-              openingTimes: "null",
-              fuel: []
+                id: data.id,
+                name: data.name,
+                brand: data.bnd,
+                address: address,
+                postCode: zipcode,
+                place: place,
+                state: state,
+                country: "Italia",
+                isOpen: "null",
+                lat: data.lat,
+                lng: data.lon,
+                openingTimes: "null",
+                fuel: []
             };
 
             for ( var i in data.carburanti ) {
-              obj.fuel.push({
-                type: data.carburanti[i].idCarb + '-' + data.carburanti[i].isSelf,
-                price: data.carburanti[i].prezzo,
-                price_currency: "EUR",
-                lastUpdate: data.dIns
-              });
+                obj.fuel.push({
+                    type: data.carburanti[i].idCarb + '-' + data.carburanti[i].isSelf,
+                    price: data.carburanti[i].prezzo,
+                    price_currency: "EUR",
+                    lastUpdate: data.dIns
+                });
             }
 
             return obj;
