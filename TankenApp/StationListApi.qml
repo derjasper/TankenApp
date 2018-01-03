@@ -22,23 +22,30 @@ Item {
 
         loading = true;
 
-        Api.getList(api,lat,lng,rad,type,sort,function(m) {
+        try {
+            Api.getList(api,lat,lng,rad,type,sort,function(m) {
 
-            model.clear();
+                model.clear();
 
-            if (m == null) {
-                err = true;
-            }
-            else {
-                for ( var key in m ) {
-                    model.append(m[key]);
+                if (m == null) {
+                    err = true;
                 }
+                else {
+                    for ( var key in m ) {
+                        model.append(m[key]);
+                    }
 
-                err = false;
-            }
-
+                    err = false;
+                }
+            });
+        }
+        catch(ex) {
+            err = true;
+            throw ex;
+        }
+        finally {
             loading = false;
-        });
+        }
     }
 }
 
