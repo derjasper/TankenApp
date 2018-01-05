@@ -144,34 +144,14 @@ Page {
                 }
             }
 
-            // Data Sources
-
-            ListModel { id: jsonModel }
-
-            Component.onCompleted: {
-                Api.apiindex.forEach(function(val) {
-                    jsonModel.append(val);
-                });
-            }
-
             ListItem {
-                height: layout2.height + (divider.visible ? divider.height : 0)
+                height: layout04.height + divider.height
                 ListItemLayout {
-                    id: layout2
-                    title.text: i18n.tr("Data Sources")
-                    title.font.bold: true
+                    id: layout04
+                    title.text: "dayrover"
                 }
-            }
-
-            Repeater {
-                model: jsonModel
-                delegate: ListItem {
-                    height: layout1.height + (divider.visible ? divider.height : 0)
-                    ListItemLayout {
-                        id: layout1
-                        title.text: name
-                        subtitle.text: license
-                    }
+                onClicked: {
+                    Qt.openUrlExternally("https://github.com/dayrover")
                 }
             }
         }
