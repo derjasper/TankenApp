@@ -28,7 +28,7 @@ tankerkoenigApi.getList = function(apikey, url, lat, lng, rad, type, sort, callb
                     brand: (data[key].brand != null ? data[key].brand : "null"),
                     dist: data[key].dist+"",
                     dist_unit: "km",
-                    price: data[key].price.toFixed(3)+"",
+                    price: (data[key].price != null ? data[key].price.toFixed(3)+"" : "?"),
                     price_currency: "EUR",
                     id: data[key].id,
                     address: data[key].street + (data[key].houseNumber==undefined ? "" : " "+data[key].houseNumber ),
