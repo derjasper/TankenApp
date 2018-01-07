@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TankenApp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-06 06:34+0000\n"
+"POT-Creation-Date: 2018-01-07 14:24+0000\n"
 "PO-Revision-Date: 2016-09-05 15:54+0000\n"
 "Last-Translator: Jasper Nalbach <jasper@bluetreehouse.de>\n"
 "Language-Team: German (http://www.transifex.com/derjasper/tankenapp/language/"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: Launchpad (build 18179)\n"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:11
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:189
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:187
 msgid "About"
 msgstr "Über"
 
@@ -66,12 +66,8 @@ msgstr "Lizensiert unter den Bedingungen der GPLv3. Quellcode verfügbar unter:"
 msgid "Contributors"
 msgstr ""
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:161
-msgid "Data Sources"
-msgstr "Datenquellen"
-
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/ApiPage.qml:10
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:184
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:182
 msgid "Select Source"
 msgstr "Quelle auswählen"
 
@@ -87,12 +83,12 @@ msgid "An error occurred."
 msgstr "Ein Fehler ist aufgetreten."
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/DetailsPage.qml:115
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:296
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:294
 msgid "open"
 msgstr "geöffnet"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/DetailsPage.qml:115
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:296
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:294
 msgid "closed"
 msgstr "geschlossen"
 
@@ -105,7 +101,7 @@ msgid "Navigate with HERE"
 msgstr "Navigieren mit HERE"
 
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/LocationPage.qml:9
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:179
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:177
 msgid "Select Location"
 msgstr "Ort wählen"
 
@@ -121,24 +117,24 @@ msgstr "Suchen"
 msgid "Current Location"
 msgstr "Aktuelle Position"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:141
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:139
 msgid "Service Stations"
 msgstr "Tankstellen"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:159
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:157
 msgid "Show on Map"
 msgstr "Karte anzeigen"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:167
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:165
 msgid "Reload"
 msgstr "Neu laden"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:174
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:172
 #: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/SettingsPage.qml:11
 msgid "Filter"
 msgstr "Filter"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:320
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:318
 msgid ""
 "No results found. Please check your Internet connection or set another data "
 "source."
@@ -146,7 +142,7 @@ msgstr ""
 "Keine Ergebnisse gefunden. Bitte überprüfe deine Internetverbindung oder "
 "stelle eine andere Datenquelle ein."
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:339
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:337
 msgid "Map"
 msgstr "Karte"
 
@@ -415,9 +411,12 @@ msgstr "von Benutzern gepflegte Daten für USA"
 msgid "http://www.mygasfeed.com/"
 msgstr "http://www.mygasfeed.com/"
 
-#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/build-TankenApp-UbuntuSDK_for_builder_i386_GCC_i386_ubuntu_sdk_15_04-Release/TankenApp/TankenApp.desktop.h:1
+#: /home/jasper/Dokumente/Projekte/UbuntuApps/TankenApp/TankenApp/build/TankenApp/TankenApp.desktop.h:1
 msgid "TankenApp"
 msgstr "TankenApp"
+
+#~ msgid "Data Sources"
+#~ msgstr "Datenquellen"
 
 #~ msgid "Translations: "
 #~ msgstr "Übersetzungen: "
