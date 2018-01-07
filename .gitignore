@@ -5,3 +5,4 @@ Makefile
 TankenApp.pro.user
 TankenApp.pro.user.*
 po/template.pot
+build
