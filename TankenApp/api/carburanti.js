@@ -1,4 +1,14 @@
-var carburantiApi = {};
+var carburantiApi = {
+  settings: {
+    unit: {
+      distance: "km"
+    },
+    features: {
+      types: ["1-x", "1-1", "1-0", "2-x", "2-1", "2-0", "3-x", "4-x", "6-0", "6-1", "6-x", "10-0", "10-1", "14-0", "14-1", "20-0", "20-1"],
+      sort: ["price"]
+    }
+  }
+};
 
 {
 

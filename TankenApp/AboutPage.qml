@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Ubuntu.Components 1.3
 
 import "api/apiindex.js" as Api
+import "contributors.json.js" as C
 
 
 Page {
@@ -99,7 +100,6 @@ Page {
                 text: " "
             }
 
-
             // Contributors
 
             ListItem {
@@ -111,48 +111,20 @@ Page {
                 }
             }
 
-            ListItem {
-                height: layout01.height + divider.height
-                ListItemLayout {
-                    id: layout01
-                    title.text: "Jasper Nalbach (main developer)"
-                }
-                onClicked: {
-                    Qt.openUrlExternally("https://github.com/derjasper")
-                }
-            }
+            Repeater {
+              model: C.contributors
 
-            ListItem {
-                height: layout02.height + divider.height
-                ListItemLayout {
-                    id: layout02
-                    title.text: "Florin Lungu (backend for Italy, translations)"
-                }
-                onClicked: {
-                    Qt.openUrlExternally("https://github.com/floryn90")
-                }
-            }
-
-            ListItem {
-                height: layout03.height + divider.height
-                ListItemLayout {
-                    id: layout03
-                    title.text: "Jean-Marc (French translations)"
-                }
-                onClicked: {
-                    Qt.openUrlExternally("https://launchpad.net/~m-balthazar")
-                }
-            }
-
-            ListItem {
-                height: layout04.height + divider.height
-                ListItemLayout {
-                    id: layout04
-                    title.text: "dayrover"
-                }
-                onClicked: {
-                    Qt.openUrlExternally("https://github.com/dayrover")
-                }
+              delegate: ListItem {
+                  height: layout01.height + divider.height
+                  ListItemLayout {
+                      id: layout01
+                      title.text: C.contributors[index].name
+                      subtitle.text: C.contributors[index].contribution
+                  }
+                  onClicked: {
+                      Qt.openUrlExternally(C.contributors[index].link)
+                  }
+              }
             }
         }
     }

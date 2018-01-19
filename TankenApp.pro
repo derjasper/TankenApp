@@ -10,7 +10,7 @@ SUBDIRS += TankenApp
 
 # specify the manifest file, this file is required for click
 # packaging and for the IDE to create runconfigurations
-UBUNTU_MANIFEST_FILE=manifest.json.in
+UBUNTU_MANIFEST_FILE=manifest.json
 
 # specify translation domain, this must be equal with the
 # app name in the manifest file
@@ -34,8 +34,7 @@ aptest.commands = bash $$PWD/TankenApp/tests/autopilot/run
 aptest.depends  = sub-TankenApp
 
 unittest.target   = check
-unittest.commands = /usr/bin/qmltestrunner -input $$PWD/TankenApp/tests/unit 
+unittest.commands = /usr/bin/qmltestrunner -input $$PWD/TankenApp/tests/unit
 unittest.depends  = sub-TankenApp
 
 QMAKE_EXTRA_TARGETS += aptest unittest
-

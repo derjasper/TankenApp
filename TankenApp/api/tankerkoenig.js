@@ -1,4 +1,14 @@
-var tankerkoenigApi = {};
+var tankerkoenigApi = {
+  settings: {
+      unit: {
+          distance: "km"
+      },
+      features: {
+          types: ["e5", "e10", "diesel"],
+          sort: ["price","dist"]
+      }
+  }
+};
 
 tankerkoenigApi.getList = function(apikey, url, lat, lng, rad, type, sort, callback) {
     var xhr = new XMLHttpRequest;

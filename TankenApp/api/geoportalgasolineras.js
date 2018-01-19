@@ -1,4 +1,14 @@
-var geoportalgasolinerasApi = {};
+var geoportalgasolinerasApi = {
+  settings: {
+      unit: {
+          distance: "km"
+      },
+      features: {
+          types: ["gpr","g98","goa","ngo","bio","bie","gnc"],
+          sort: ["price","dist"]
+      }
+  }
+};
 
 geoportalgasolinerasApi.getList = function(apikey, url, lat, lng, rad, type, sort, callback) {
     if (sort=="price") {

@@ -1,4 +1,14 @@
-var mygasfeedApi = {};
+var mygasfeedApi = {
+  settings: {
+      unit: {
+          distance: "miles"
+      },
+      features: {
+          types: ["reg", "mid", "pre", "diesel"],
+          sort: ["price","dist"]
+      }
+  }
+};
 
 {
     function processLastUpdate(str) {

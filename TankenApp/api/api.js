@@ -1,7 +1,6 @@
 .pragma library
 
 Qt.include("apikeys.js")
-Qt.include("apisettings.js")
 
 /**
   API for getting fuel prices
@@ -13,16 +12,28 @@ Qt.include("apisettings.js")
 
 // import sub-APIs
 var apis = {};
+var apisettings = {};
+
 Qt.include("tankerkoenig.js");
 apis["tankerkoenig"]=tankerkoenigApi;
+apisettings["tankerkoenig"]=tankerkoenigApi.settings;
+
 Qt.include("mygasfeed.js");
 apis["mygasfeed"]=mygasfeedApi;
+apisettings["mygasfeed"]=mygasfeedApi.settings;
+
 Qt.include("spritpreisrechner.js");
 apis["spritpreisrechner"]=spritpreisrechnerApi;
+apisettings["spritpreisrechner"]=spritpreisrechnerApi.settings;
+
 Qt.include("geoportalgasolineras.js");
 apis["geoportalgasolineras"]=geoportalgasolinerasApi;
+apisettings["geoportalgasolineras"]=geoportalgasolinerasApi.settings;
+
 Qt.include("carburanti.js");
 apis["carburanti"]=carburantiApi;
+apisettings["carburanti"]=carburantiApi.settings;
+
 
 
 /**

@@ -1,4 +1,14 @@
-var spritpreisrechnerApi = {};
+var spritpreisrechnerApi = {
+  settings: {
+      unit: {
+          distance: "km"
+      },
+      features: {
+          types: ["diesel", "super95"],
+          sort: ["price"]
+      }
+  }
+};
 
 {
     var dataCache = [];
