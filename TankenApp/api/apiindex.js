@@ -24,6 +24,12 @@ var apiindex = [
         license: i18n.tr("https://carburanti.mise.gov.it/OssPrezziSearch/")
     },
     {
+        id: "prixcarburants",
+        name: i18n.tr("prix-carburants.gouv.fr (beta)"),
+        description: i18n.tr("official data for France"),
+        license: i18n.tr("Licence Ouverte - https://www.prix-carburants.gouv.fr/")
+    },
+    {
         id: "mygasfeed",
         name: i18n.tr("myGasFeed.com"),
         description: i18n.tr("user contributed data for USA"),

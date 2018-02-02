@@ -30,6 +30,10 @@ Qt.include("geoportalgasolineras.js");
 apis["geoportalgasolineras"]=geoportalgasolinerasApi;
 apisettings["geoportalgasolineras"]=geoportalgasolinerasApi.settings;
 
+Qt.include("prixcarburants.js");
+apis["prixcarburants"]=prixcarburantsApi;
+apisettings["prixcarburants"]=prixcarburantsApi.settings;
+
 Qt.include("carburanti.js");
 apis["carburanti"]=carburantiApi;
 apisettings["carburanti"]=carburantiApi.settings;

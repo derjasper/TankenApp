@@ -16,6 +16,10 @@ var apikey = {
         key: "", // no api key needed, service hosted by TankenApp's developer
         url: "http://bluetreehouse.de:8081/fuelSpain/"
     },
+    prixcarburants: {
+        key: "", // no api key needed, service hosted by TankenApp's developer
+        url: "http://bluetreehouse.de:8081/fuelFrance/"
+    },
     carburanti: {
       key: "", //no api key needed
       url: "https://carburanti.mise.gov.it/OssPrezziSearch/"

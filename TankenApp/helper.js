@@ -105,6 +105,38 @@ function fuelKeyToString(api,fuel) {
         }
     }
 
+    if (api == "prixcarburants") {
+        if (fuel=="gazole") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("Gazole (Diesel fuel)");
+        }
+
+        if (fuel=="sp95") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("SP95 (SP95)");
+        }
+
+        if (fuel=="sp98") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("SP98 (SP98)");
+        }
+
+        if (fuel=="gplc") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("GPLc (GPLc)");
+        }
+
+        if (fuel=="e10") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("E10 (E10)");
+        }
+
+        if (fuel=="e85") {
+            // TRANSLATORS: include original name and append translation in brackets if different
+            return i18n.tr("E85 (E85)");
+        }
+    }
+
     if (api == "carburanti") {
         if (fuel == "1-x") {
             // TRANSLATORS: include original name and append translation in brackets if different
