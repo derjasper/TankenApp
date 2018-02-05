@@ -14,11 +14,11 @@ var apikey = {
     },
     geoportalgasolineras: {
         key: "", // no api key needed, service hosted by TankenApp's developer
-        url: "http://bluetreehouse.de:8081/fuelSpain/"
+        url: "http://api.jaspernalbach.com/fuelSpain/"
     },
     prixcarburants: {
         key: "", // no api key needed, service hosted by TankenApp's developer
-        url: "http://bluetreehouse.de:8081/fuelFrance/"
+        url: "http://api.jaspernalbach.com/fuelFrance/"
     },
     carburanti: {
       key: "", //no api key needed
