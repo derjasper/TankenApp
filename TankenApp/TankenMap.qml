@@ -36,15 +36,43 @@ Item {
                 anchorPoint.x: 32
                 anchorPoint.y: 64
                 sourceItem: MouseArea {
-                    width: 64
+                    width: units.gu(12)
                     height: 64
+                    
+                    UbuntuShape {
+                        anchors.fill: parent
+                        backgroundColor: "white"
 
-                    Icon {
+
+
+                        Column {
+                            Row {
+                                Label {
+                                    text: price != "null" ? price : "N/A"
+                                    fontSize:"x-large"
+                                }
+
+                                Label {
+                                    text: price_currency
+                                    fontSize:"x-small"
+                                }
+                            }
+
+                            Label {
+                                text: lastUpdate !="null" ? Helper.renderLastUpdate(lastUpdate) : dist + " " + dist_unit
+                            }
+
+                            width: parent.width
+                            height: parent.height
+                        }
+                    }
+
+                    /*Icon {
                         width: 64
                         height: 64
                         name: "location-active"
                         color: UbuntuColors.blue
-                    }
+                    }*/
 
                     onClicked: {
                         markerClicked(id);
@@ -62,4 +90,3 @@ Item {
         }
     }
 }
-
