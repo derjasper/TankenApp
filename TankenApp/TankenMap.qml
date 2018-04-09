@@ -33,19 +33,30 @@ Item {
         MapItemView {
             model: root.model
             delegate: MapQuickItem {
-                anchorPoint.x: 32
+                anchorPoint.x: 10
                 anchorPoint.y: 64
                 sourceItem: MouseArea {
                     width: units.gu(12)
-                    height: 64
-                    
-                    UbuntuShape {
-                        anchors.fill: parent
-                        backgroundColor: "white"
+                    height: 74
 
+                    Rectangle {
+                        id: rect
 
+                        width: parent.width
+                        height: 64
+
+                        color: "white"
+                        border.width: 2
+                        border.color: "black"
 
                         Column {
+                            width: parent.width - 8
+                            height: parent.height - 8
+                            anchors.top: parent.top
+                            anchors.left: parent.left
+                            anchors.topMargin: 4
+                            anchors.leftMargin: 4
+
                             Row {
                                 Label {
                                     text: price != "null" ? price : "N/A"
@@ -61,15 +72,18 @@ Item {
                             Label {
                                 text: lastUpdate !="null" ? Helper.renderLastUpdate(lastUpdate) : dist + " " + dist_unit
                             }
-
-                            width: parent.width
-                            height: parent.height
                         }
                     }
 
+                    Image {
+                        anchors.top: rect.bottom
+                        width: 20
+                        height: 10
+                        source: "marker_arrow.png"
+                    }
+
                     /*Icon {
-                        width: 64
-                        height: 64
+
                         name: "location-active"
                         color: UbuntuColors.blue
                     }*/
