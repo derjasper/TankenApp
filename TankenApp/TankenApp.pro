@@ -7,10 +7,11 @@ QML_FILES += $$files(*.js,true) \
             $$files(*.qml,true)
 
 CONF_FILES +=  TankenApp.apparmor \
-               TankenApp.png
+               TankenApp.png \
+               marker_arrow.png
 
 AP_TEST_FILES += tests/autopilot/run \
-                 $$files(tests/*.py,true)               
+                 $$files(tests/*.py,true)
 
 OTHER_FILES += $${CONF_FILES} \
                $${QML_FILES} \
@@ -29,7 +30,7 @@ qml1_files.files += api/*.js
 config_files.path = /TankenApp
 config_files.files += $${CONF_FILES}
 
-#install the desktop file, a translated version is 
+#install the desktop file, a translated version is
 #automatically created in the build directory
 desktop_file.path = /TankenApp
 desktop_file.files = $$OUT_PWD/TankenApp.desktop

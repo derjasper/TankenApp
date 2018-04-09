@@ -33,18 +33,60 @@ Item {
         MapItemView {
             model: root.model
             delegate: MapQuickItem {
-                anchorPoint.x: 32
+                anchorPoint.x: 10
                 anchorPoint.y: 64
                 sourceItem: MouseArea {
-                    width: 64
-                    height: 64
+                    width: units.gu(12)
+                    height: 74
 
-                    Icon {
-                        width: 64
+                    Rectangle {
+                        id: rect
+
+                        width: parent.width
                         height: 64
+
+                        color: "white"
+                        border.width: 2
+                        border.color: "black"
+
+                        Column {
+                            width: parent.width - 8
+                            height: parent.height - 8
+                            anchors.top: parent.top
+                            anchors.left: parent.left
+                            anchors.topMargin: 4
+                            anchors.leftMargin: 4
+
+                            Row {
+                                Label {
+                                    text: price != "null" ? price : "N/A"
+                                    fontSize:"x-large"
+                                }
+
+                                Label {
+                                    text: price_currency
+                                    fontSize:"x-small"
+                                }
+                            }
+
+                            Label {
+                                text: lastUpdate !="null" ? Helper.renderLastUpdate(lastUpdate) : dist + " " + dist_unit
+                            }
+                        }
+                    }
+
+                    Image {
+                        anchors.top: rect.bottom
+                        width: 20
+                        height: 10
+                        source: "marker_arrow.png"
+                    }
+
+                    /*Icon {
+
                         name: "location-active"
                         color: UbuntuColors.blue
-                    }
+                    }*/
 
                     onClicked: {
                         markerClicked(id);
@@ -62,4 +104,3 @@ Item {
         }
     }
 }
-
