@@ -9,7 +9,7 @@
             "desktop": "TankenApp/TankenApp.desktop"
         }
     },
-    "version": "0.4.13",
+    "version": "0.4.14",
     "maintainer": "Jasper Nalbach <derjasper@posteo.de>",
     "framework": "ubuntu-sdk-15.04"
 }
