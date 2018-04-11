@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Jasper Nalbach <derjasper@posteo.de>, 2016
+# Jasper Nalbach <jasper@bluetreehouse.de>, 2016
 # Tobi o_o <tobirium@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: TankenApp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-09 20:28+0000\n"
-"PO-Revision-Date: 2016-09-05 15:54+0000\n"
+"POT-Creation-Date: 2018-04-11 10:54+0000\n"
+"PO-Revision-Date: 2018-04-10 22:10+0000\n"
 "Last-Translator: Jasper Nalbach <derjasper@posteo.de>\n"
 "Language-Team: German (http://www.transifex.com/derjasper/tankenapp/language/"
 "de/)\n"
@@ -18,8 +18,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-09-06 06:30+0000\n"
-"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2018-04-11 05:54+0000\n"
+"X-Generator: Launchpad (build 18609)\n"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:12
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:187
@@ -54,9 +54,8 @@ msgid "Donate via PayPal"
 msgstr "Spenden mit PayPal"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:92
-#, fuzzy
 msgid "TankenApp Contributors"
-msgstr "TankenApp auf GitHub"
+msgstr "TankenApp Mitwirkende"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:92
 msgid "Licensed under GPLv3. Source code available at:"
@@ -64,7 +63,7 @@ msgstr "Lizensiert unter den Bedingungen der GPLv3. Quellcode verfügbar unter:"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/AboutPage.qml:109
 msgid "Contributors"
-msgstr ""
+msgstr "Mitwirkende"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/ApiPage.qml:10
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/Main.qml:182
@@ -181,7 +180,6 @@ msgstr "Benzin E5"
 
 #. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:28
-#, fuzzy
 msgid "Benzin E10 (Fuel E10)"
 msgstr "Benzin E10"
 
@@ -249,9 +247,8 @@ msgstr "Gas Natural Comprimido (komprimiertes Erdgas, CNG)"
 
 #. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:111
-#, fuzzy
 msgid "Gazole (Diesel fuel)"
-msgstr "Gasoleo A (Diesel)"
+msgstr ""
 
 #. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:116
@@ -270,9 +267,8 @@ msgstr ""
 
 #. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:131
-#, fuzzy
 msgid "E10 (E10)"
-msgstr "Benzin E10"
+msgstr ""
 
 #. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:136
@@ -296,9 +292,8 @@ msgstr ""
 
 #. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:158
-#, fuzzy
 msgid "Gasolio [Diesel]"
-msgstr "Gasoleo A (Diesel)"
+msgstr ""
 
 #. TRANSLATORS: include original name and append translation in brackets if different
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/helper.js:163
@@ -421,7 +416,7 @@ msgstr "http://www.geoportalgasolineras.es/"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:22
 msgid "carburanti.mise.gov.it"
-msgstr ""
+msgstr "carburanti.mise.gov.it"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:23
 msgid "official data for Italy"
@@ -429,20 +424,19 @@ msgstr "offizelle Daten für Italien"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:24
 msgid "https://carburanti.mise.gov.it/OssPrezziSearch/"
-msgstr ""
+msgstr "https://carburanti.mise.gov.it/OssPrezziSearch/"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:28
 msgid "prix-carburants.gouv.fr (beta)"
-msgstr ""
+msgstr "prix-carburants.gouv.fr (beta)"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:29
-#, fuzzy
 msgid "official data for France"
-msgstr "offizielle Daten für Spanien"
+msgstr "offizielle Daten für Frankreich"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:30
 msgid "Licence Ouverte - https://www.prix-carburants.gouv.fr/"
-msgstr ""
+msgstr "Licence Ouverte - https://www.prix-carburants.gouv.fr/"
 
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/TankenApp/api/apiindex.js:34
 msgid "myGasFeed.com"
@@ -459,12 +453,3 @@ msgstr "http://www.mygasfeed.com/"
 #: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/build/TankenApp/TankenApp.desktop.h:1
 msgid "TankenApp"
 msgstr "TankenApp"
-
-#~ msgid "Data Sources"
-#~ msgstr "Datenquellen"
-
-#~ msgid "Translations: "
-#~ msgstr "Übersetzungen: "
-
-#~ msgid "TankenApp is made possible by these data sources:"
-#~ msgstr "TankenApp ist möglich dank dieser Datenquellen:"
