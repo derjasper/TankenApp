@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.ubuntu.developer.derjasper.tankenapp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-04 16:38+0000\n"
+"POT-Creation-Date: 2018-10-04 17:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,123 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../TankenApp/SettingsPage.qml:11 ../TankenApp/Main.qml:172
+msgid "Filter"
+msgstr ""
+
+#: ../TankenApp/SettingsPage.qml:42
+msgid "Fuel type"
+msgstr ""
+
+#: ../TankenApp/SettingsPage.qml:80
+msgid "Radius"
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:12 ../TankenApp/Main.qml:187
+msgid "About"
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:55
+msgid "Real-time fuel prices"
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:55
+msgid "No warranty for correct prices and availability."
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:62
+msgid ""
+"For bug reports, pull requests and information on how to translate, please "
+"go to the GitHub project."
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:68
+msgid "TankenApp on GitHub"
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:77
+msgid "I would appreciate a donation if you like this app."
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:83
+msgid "Donate via PayPal"
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:92
+msgid "TankenApp Contributors"
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:92
+msgid "Licensed under GPLv3. Source code available at:"
+msgstr ""
+
+#: ../TankenApp/AboutPage.qml:109
+msgid "Contributors"
+msgstr ""
+
+#: ../TankenApp/Main.qml:139
+msgid "Service Stations"
+msgstr ""
+
+#: ../TankenApp/Main.qml:157
+msgid "Show on Map"
+msgstr ""
+
+#: ../TankenApp/Main.qml:165
+msgid "Reload"
+msgstr ""
+
+#: ../TankenApp/Main.qml:177 ../TankenApp/LocationPage.qml:9
+msgid "Select Location"
+msgstr ""
+
+#: ../TankenApp/Main.qml:182 ../TankenApp/ApiPage.qml:10
+msgid "Select Source"
+msgstr ""
+
+#: ../TankenApp/Main.qml:294 ../TankenApp/DetailsPage.qml:115
+msgid "open"
+msgstr ""
+
+#: ../TankenApp/Main.qml:294 ../TankenApp/DetailsPage.qml:115
+msgid "closed"
+msgstr ""
+
+#: ../TankenApp/Main.qml:318
+msgid ""
+"No results found. Please check your Internet connection or set another data "
+"source."
+msgstr ""
+
+#: ../TankenApp/Main.qml:337
+msgid "Map"
+msgstr ""
+
+#: ../TankenApp/DetailsPage.qml:10 ../TankenApp/DetailsPage.qml:27
+#: ../TankenApp/DetailsPage.qml:32
+msgid "Details"
+msgstr ""
+
+#: ../TankenApp/DetailsPage.qml:36 ../TankenApp/DetailsPage.qml:47
+msgid "An error occurred."
+msgstr ""
+
+#: ../TankenApp/DetailsPage.qml:194
+msgid "Navigate"
+msgstr ""
+
+#: ../TankenApp/DetailsPage.qml:202
+msgid "Navigate with HERE"
+msgstr ""
+
+#: ../TankenApp/LocationPage.qml:18
+msgid "Enter a location"
+msgstr ""
+
+#: ../TankenApp/LocationPage.qml:35
+msgid "Current Location"
+msgstr ""
 
 #: TankenApp.desktop.in.h:1
 msgid "TankenApp"
