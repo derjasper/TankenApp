@@ -16,15 +16,16 @@ Page {
             TextField {
                 id: inputText
                 placeholderText: i18n.tr("Enter a location")
-                width: parent.width - button.width - units.gu(2)
+                width: parent.width /*- button.width*/ - units.gu(2)
             }
 
+            /*
             Button {
                 id: button
                 text: i18n.tr("Search")
                 color: UbuntuColors.orange
                 onClicked: geocodeModel.update()
-            }
+            }*/
         }
 
         trailingActionBar {
@@ -53,8 +54,9 @@ Page {
         id: geocodeModel
         plugin: Plugin {
             name: "osm"
+            PluginParameter { name: "osm.geocoding.host"; value: "https://nominatim.openstreetmap.org/" }
         }
-        autoUpdate: false
+        autoUpdate: true // false
         query: inputText.text
     }
 
