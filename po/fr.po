@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 10:54+0000\n"
+"POT-Creation-Date: 2018-10-04 16:02+0000\n"
 "PO-Revision-Date: 2016-09-24 14:37+0000\n"
 "Last-Translator: Anne017 <anneonyme017@openmailbox.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -448,6 +448,6 @@ msgstr "base de données collaborative pour les États-Unis"
 msgid "http://www.mygasfeed.com/"
 msgstr "http://www.mygasfeed.com/"
 
-#: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/build/TankenApp/TankenApp.desktop.h:1
+#: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/build/TankenApp.desktop.h:1
 msgid "TankenApp"
 msgstr "TankenApp"

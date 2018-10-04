@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TankenApp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 10:54+0000\n"
+"POT-Creation-Date: 2018-10-04 16:02+0000\n"
 "PO-Revision-Date: 2018-04-10 22:10+0000\n"
 "Last-Translator: Jasper Nalbach <derjasper@posteo.de>\n"
 "Language-Team: German (http://www.transifex.com/derjasper/tankenapp/language/"
@@ -450,6 +450,6 @@ msgstr "von Benutzern gepflegte Daten für USA"
 msgid "http://www.mygasfeed.com/"
 msgstr "http://www.mygasfeed.com/"
 
-#: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/build/TankenApp/TankenApp.desktop.h:1
+#: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/build/TankenApp.desktop.h:1
 msgid "TankenApp"
 msgstr "TankenApp"

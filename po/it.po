@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 10:54+0000\n"
+"POT-Creation-Date: 2018-10-04 16:02+0000\n"
 "PO-Revision-Date: 2016-09-06 07:12+0000\n"
 "Last-Translator: Florin Lungu <florin90@tiscali.it>\n"
 "Language-Team: \n"
@@ -448,6 +448,6 @@ msgstr "dati raccolti dagli utenti per USA"
 msgid "http://www.mygasfeed.com/"
 msgstr "http://www.mygasfeed.com/"
 
-#: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/build/TankenApp/TankenApp.desktop.h:1
+#: /home/jasper/Projekte/UbuntuApps/TankenApp/TankenApp/build/TankenApp.desktop.h:1
 msgid "TankenApp"
 msgstr "http://www.mygasfeed.com/"
