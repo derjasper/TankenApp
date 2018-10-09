@@ -8,130 +8,425 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.ubuntu.developer.derjasper.tankenapp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-04 17:39+0000\n"
+"POT-Creation-Date: 2018-10-09 07:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../TankenApp/SettingsPage.qml:11 ../TankenApp/Main.qml:172
+#: ../qml/SettingsPage.qml:11 ../qml/Main.qml:172
 msgid "Filter"
 msgstr ""
 
-#: ../TankenApp/SettingsPage.qml:42
+#: ../qml/SettingsPage.qml:42
 msgid "Fuel type"
 msgstr ""
 
-#: ../TankenApp/SettingsPage.qml:80
+#: ../qml/SettingsPage.qml:80
 msgid "Radius"
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:12 ../TankenApp/Main.qml:187
+#: ../qml/AboutPage.qml:12 ../qml/Main.qml:187
 msgid "About"
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:55
+#: ../qml/AboutPage.qml:55
 msgid "Real-time fuel prices"
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:55
+#: ../qml/AboutPage.qml:55
 msgid "No warranty for correct prices and availability."
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:62
+#: ../qml/AboutPage.qml:62
 msgid ""
 "For bug reports, pull requests and information on how to translate, please "
 "go to the GitHub project."
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:68
+#: ../qml/AboutPage.qml:68
 msgid "TankenApp on GitHub"
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:77
+#: ../qml/AboutPage.qml:77
 msgid "I would appreciate a donation if you like this app."
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:83
+#: ../qml/AboutPage.qml:83
 msgid "Donate via PayPal"
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:92
+#: ../qml/AboutPage.qml:92
 msgid "TankenApp Contributors"
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:92
+#: ../qml/AboutPage.qml:92
 msgid "Licensed under GPLv3. Source code available at:"
 msgstr ""
 
-#: ../TankenApp/AboutPage.qml:109
+#: ../qml/AboutPage.qml:109
 msgid "Contributors"
 msgstr ""
 
-#: ../TankenApp/Main.qml:139
+#: ../qml/Main.qml:139
 msgid "Service Stations"
 msgstr ""
 
-#: ../TankenApp/Main.qml:157
+#: ../qml/Main.qml:157
 msgid "Show on Map"
 msgstr ""
 
-#: ../TankenApp/Main.qml:165
+#: ../qml/Main.qml:165
 msgid "Reload"
 msgstr ""
 
-#: ../TankenApp/Main.qml:177 ../TankenApp/LocationPage.qml:9
+#: ../qml/Main.qml:177 ../qml/LocationPage.qml:9
 msgid "Select Location"
 msgstr ""
 
-#: ../TankenApp/Main.qml:182 ../TankenApp/ApiPage.qml:10
+#: ../qml/Main.qml:182 ../qml/ApiPage.qml:10
 msgid "Select Source"
 msgstr ""
 
-#: ../TankenApp/Main.qml:294 ../TankenApp/DetailsPage.qml:115
+#: ../qml/Main.qml:294 ../qml/DetailsPage.qml:115
 msgid "open"
 msgstr ""
 
-#: ../TankenApp/Main.qml:294 ../TankenApp/DetailsPage.qml:115
+#: ../qml/Main.qml:294 ../qml/DetailsPage.qml:115
 msgid "closed"
 msgstr ""
 
-#: ../TankenApp/Main.qml:318
+#: ../qml/Main.qml:318
 msgid ""
 "No results found. Please check your Internet connection or set another data "
 "source."
 msgstr ""
 
-#: ../TankenApp/Main.qml:337
+#: ../qml/Main.qml:337
 msgid "Map"
 msgstr ""
 
-#: ../TankenApp/DetailsPage.qml:10 ../TankenApp/DetailsPage.qml:27
-#: ../TankenApp/DetailsPage.qml:32
+#: ../qml/DetailsPage.qml:10 ../qml/DetailsPage.qml:27
+#: ../qml/DetailsPage.qml:32
 msgid "Details"
 msgstr ""
 
-#: ../TankenApp/DetailsPage.qml:36 ../TankenApp/DetailsPage.qml:47
+#: ../qml/DetailsPage.qml:36 ../qml/DetailsPage.qml:47
 msgid "An error occurred."
 msgstr ""
 
-#: ../TankenApp/DetailsPage.qml:194
+#: ../qml/DetailsPage.qml:194
 msgid "Navigate"
 msgstr ""
 
-#: ../TankenApp/DetailsPage.qml:202
+#: ../qml/DetailsPage.qml:202
 msgid "Navigate with HERE"
 msgstr ""
 
-#: ../TankenApp/LocationPage.qml:18
+#: ../qml/LocationPage.qml:18
 msgid "Enter a location"
 msgstr ""
 
-#: ../TankenApp/LocationPage.qml:35
+#: ../qml/LocationPage.qml:35
 msgid "Current Location"
+msgstr ""
+
+#: ../qml/helper.js:5
+msgid "recent"
+msgstr ""
+
+#: ../qml/helper.js:8
+msgid "last day"
+msgstr ""
+
+#: ../qml/helper.js:11
+msgid "last week"
+msgstr ""
+
+#: ../qml/helper.js:14
+msgid "last month"
+msgstr ""
+
+#: ../qml/helper.js:16
+msgid "outdated"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:23
+msgid "Benzin E5 (Fuel E5)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:28
+msgid "Benzin E10 (Fuel E10)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:33 ../qml/helper.js:40 ../qml/helper.js:52
+msgid "Diesel"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:45
+msgid "Super 95 (Fuel 95)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:57
+msgid "Regular Gasoline"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:62
+msgid "Mid-Grade Gasoline"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:67
+msgid "Premium Gasoline"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:74
+msgid "Gasolina 95 Protección (Unleaded 95)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:79
+msgid "Gasolina  98 (Fuel 98)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:84
+msgid "Gasoleo A (Diesel)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:89
+msgid "Nuevo Gasoleo A (Diesel+)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:94
+msgid "Biodiésel (Biodiesel)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:99
+msgid "Bioetanol (Bioethanol)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:104
+msgid "Gas Natural Comprimido (Compressed natural gas)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:111
+msgid "Gazole (Diesel fuel)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:116
+msgid "SP95 (SP95)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:121
+msgid "SP98 (SP98)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:126
+msgid "GPLc (GPLc)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:131
+msgid "E10 (E10)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:136
+msgid "E85 (E85)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:143
+msgid "Benzina [Benzine]"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:148
+msgid "Benzina (Servito)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:153
+msgid "Benzina (Self)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:158
+msgid "Gasolio [Diesel]"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:163
+msgid "Gasolio (Self)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:168
+msgid "Gasolio (Servito)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:173
+msgid "Metano [Methane]"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:178
+msgid "GPL"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:183
+msgid "Hi-Q Diesel (Self)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:188
+msgid "Hi-Q Diesel (Servito)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:193
+msgid "Hi-Q Diesel"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:198
+msgid "Gasolio Premium (Servito)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:203
+msgid "Gasolio Premium (Self)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:208
+msgid "Excelium Diesel (Servito)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:213
+msgid "Excelium Diesel (Self)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:218
+msgid "Blue Diesel (Servito)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:223
+msgid "Blue Diesel (Self)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:228
+msgid "HiQ Perform+ (Servito)"
+msgstr ""
+
+#. TRANSLATORS: include original name and append translation in brackets if different
+#: ../qml/helper.js:233
+msgid "HiQ Perform+ (Self)"
+msgstr ""
+
+#: ../qml/helper.js:242
+msgid "By Distance"
+msgstr ""
+
+#: ../qml/helper.js:245
+msgid "By Price"
+msgstr ""
+
+#: ../qml/api/apiindex.js:4
+msgid "Tankerkoenig.de"
+msgstr ""
+
+#: ../qml/api/apiindex.js:5
+msgid "official MTS-K data for Germany"
+msgstr ""
+
+#: ../qml/api/apiindex.js:6
+msgid "CC BY 4.0 - http://creativecommons.tankerkoenig.de"
+msgstr ""
+
+#: ../qml/api/apiindex.js:10
+msgid "spritpreisrechner.at"
+msgstr ""
+
+#: ../qml/api/apiindex.js:11
+msgid "official data for Austria"
+msgstr ""
+
+#: ../qml/api/apiindex.js:12
+msgid "http://spritpreisrechner.at/"
+msgstr ""
+
+#: ../qml/api/apiindex.js:16
+msgid "geoportalgasolineras.es (beta)"
+msgstr ""
+
+#: ../qml/api/apiindex.js:17
+msgid "official data for Spain"
+msgstr ""
+
+#: ../qml/api/apiindex.js:18
+msgid "http://www.geoportalgasolineras.es/"
+msgstr ""
+
+#: ../qml/api/apiindex.js:22
+msgid "carburanti.mise.gov.it"
+msgstr ""
+
+#: ../qml/api/apiindex.js:23
+msgid "official data for Italy"
+msgstr ""
+
+#: ../qml/api/apiindex.js:24
+msgid "https://carburanti.mise.gov.it/OssPrezziSearch/"
+msgstr ""
+
+#: ../qml/api/apiindex.js:28
+msgid "prix-carburants.gouv.fr (beta)"
+msgstr ""
+
+#: ../qml/api/apiindex.js:29
+msgid "official data for France"
+msgstr ""
+
+#: ../qml/api/apiindex.js:30
+msgid "Licence Ouverte - https://www.prix-carburants.gouv.fr/"
+msgstr ""
+
+#: ../qml/api/apiindex.js:34
+msgid "myGasFeed.com"
+msgstr ""
+
+#: ../qml/api/apiindex.js:35
+msgid "user contributed data for USA"
+msgstr ""
+
+#: ../qml/api/apiindex.js:36
+msgid "http://www.mygasfeed.com/"
 msgstr ""
 
 #: TankenApp.desktop.in.h:1

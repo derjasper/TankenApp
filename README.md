@@ -23,7 +23,7 @@ Real time fuel prices.
 
 Please submit translations at https://translations.launchpad.net/tankenapp.
 
-## Buildig the app
+## Building the app
 
-* **Obtain API keys**: Before you can build the app you need to rename the file `TankenApp/api/apikeys_template.js` to `apikeys.js` and request all needed api keys.
-* **Build**: Ubuntu Apps are now build using [clickable](http://clickable.bhdouglass.com/), the SDK won't work. Simply run `clickable` in the projects folder to run the app on a phone or `clickable --desktop` for testing on the desktop.
+* **Obtain API keys**: Before you can build the app you need to rename the file `qml/api/apikeys_template.js` to `apikeys.js` and request all needed api keys.
+* **Build**: Ubuntu apps are now build using [clickable](http://clickable.bhdouglass.com/), the SDK won't work. Simply run `clickable` in the projects folder to run the app on a phone or `clickable desktop` for testing on the desktop.
